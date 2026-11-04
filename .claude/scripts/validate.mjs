@@ -10,7 +10,7 @@
 
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, extname } from 'node:path';
-import { listFiles, loadLayout, matchRule, checkFile } from './lib.mjs';
+import { listFiles, loadLayout, matchRule, checkFile, frontmatterErrors } from './lib.mjs';
 
 const root = process.cwd();
 const strict = process.argv.includes('--strict');
@@ -39,9 +39,7 @@ for (const name of existsSync(skillsDir) ? readdirSync(skillsDir) : []) {
   const file = join(skillsDir, name, 'SKILL.md');
   if (!existsSync(file)) { fail(`SKILL: .claude/skills/${name} has no SKILL.md`); continue; }
   skills++;
-  const front = readFileSync(file, 'utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
-  if (!new RegExp(`^name: ${name}\\s*$`, 'm').test(front)) fail(`SKILL: ${name}/SKILL.md frontmatter needs "name: ${name}"`);
-  if (!/^description: \S/m.test(front)) fail(`SKILL: ${name}/SKILL.md frontmatter needs a description`);
+  for (const e of frontmatterErrors(readFileSync(file, 'utf8'), name)) fail(`SKILL: ${name}/SKILL.md ${e}`);
 }
 
 console.log(`Checked ${checked} data files and ${skills} skills, ${errors} error(s).`);

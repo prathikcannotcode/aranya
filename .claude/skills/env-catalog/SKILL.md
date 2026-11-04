@@ -1,6 +1,6 @@
 ---
 name: env-catalog
-description: The provision-indexed legal spine (statutes, doctrines, cases, methodologies) in catalog/provisions.json. Use to look up a provision, check whether a law is in force, test NGT jurisdiction, resolve a flagged section, or cite a clause with its verification state.
+description: "The provision-indexed legal spine (statutes, doctrines, cases, methodologies) in catalog/provisions.json. Use to look up a provision, check whether a law is in force, test NGT jurisdiction, resolve a flagged section, or cite a clause with its verification state."
 ---
 
 # Environmental-law catalog

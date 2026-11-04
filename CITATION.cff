@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use Aranya in research, please cite it as below."
+type: software
+title: "Aranya: an open-source Indian environmental-law agent with an REA/HEA calculator"
+authors:
+  - name: "Aranya contributors"
+repository-code: "https://github.com/prathikcannotcode/aranya"
+license: Apache-2.0
+version: 0.1.0
+date-released: 2026-11-04
+keywords:
+  - environmental-law
+  - india
+  - national-green-tribunal
+  - equivalency-analysis
+  - claude-code

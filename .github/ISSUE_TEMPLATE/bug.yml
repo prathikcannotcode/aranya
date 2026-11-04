@@ -1,0 +1,16 @@
+name: Bug
+description: A script, hook, schema or skill does the wrong thing
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Command or prompt, what you expected, what you got. Never paste a real client's details.
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Node version, Claude Code version

@@ -4,7 +4,7 @@ Aranya is tooling, not legal advice. The project's credibility rests on its cita
 
 ## Ground rules
 
-- Keep to the layout in `.claude/schemas/layout.json`. A new file type needs a layout rule and, for structured data, a schema.
+- Keep to the layout in `.claude/schemas/layout.json`. A new file type needs a layout rule and, for structured data, a schema. Hooks, schemas, settings and the catalog are off limits to agents, so edit those by hand.
 - Run `npm run validate -- --strict` and `npm test` before opening a PR. CI runs both on every push.
 - One skill per directory: `.claude/skills/<name>/SKILL.md`, with `name` and `description` frontmatter and the sections Trigger / Purpose / Legal basis / Capabilities / Guardrails / Commands.
 

@@ -1,6 +1,6 @@
 ---
 name: eia-review
-description: Review an EIA report or Environmental Clearance against the EIA Notification 2006 checklist, flagging gaps and breached EC conditions. Reviews documents; it does not conduct an EIA study. Use for "review this EIA", "EC conditions", "EIA notification compliance".
+description: "Review an EIA report or Environmental Clearance against the EIA Notification 2006 checklist, flagging gaps and breached EC conditions. Reviews documents; it does not conduct an EIA study. Use for \"review this EIA\", \"EC conditions\", \"EIA notification compliance\"."
 ---
 
 # EIA review
@@ -30,6 +30,7 @@ Review a supplied EIA report or Environmental Clearance against the EIA Notifica
 - Reviews documents only; never asserts field facts it was not given.
 - Cites the 2006 Notification, never the 2020 draft.
 - Every finding cites the provision and its `verification` state; tooling, not legal advice.
+- A finding needs a `catalog_id` from `catalog/provisions.json`. If the provision is not in the catalog, raise a flag naming it and tell the user the catalog needs an entry; do not write a finding on it.
 
 ## Commands
 
