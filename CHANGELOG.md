@@ -11,7 +11,7 @@
 ### Guardrails
 - A finding needs a `catalog_id` that exists in the catalog, with a matching `source_url` and `verification`. A made-up citation could be saved as `source_cited` before.
 - Agents can't edit `catalog/provisions.json` or record `expert_validated`. `expert_validated` now requires `validated_by` and `validated_at`.
-- Hooks find the workspace from `${CLAUDE_PROJECT_DIR}` and the event's `cwd`. Before, a `cd` into a subdirectory made the hook crash with exit 1, which does not block, so writes went through.
+- Hooks find the guard under `${CLAUDE_PROJECT_DIR}`, or relative to the working directory in a session that moved here from elsewhere, and find the workspace from the event's `cwd`. Before, a `cd` into a subdirectory made the hook crash with exit 1, which does not block, so writes went through.
 - The write-guard fails closed: a broken layout blocks the write, and `onFailure: block` covers a hook that cannot start (Claude Code 2.1.295 or newer).
 - `.claude/scripts`, `.claude/schemas` and `.claude/settings.json` are out of the writable layout.
 - Secret patterns catch OpenSSH keys, `github_pat_` and `sk-ant-` keys, and JSON-style passwords. "password: hardcoded" in prose no longer blocks a write.

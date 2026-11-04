@@ -132,7 +132,7 @@ flowchart LR
     calc["hea-rea.mjs"] -->|"deterministic"| ws
 ```
 
-Skills are Markdown that tell Claude what the law provides and how to apply it. Everything Claude writes passes through two hooks, and structured files must match a JSON Schema. The agent can be wrong about the law. It cannot quietly save a finding that does not point at a catalog entry, edit the catalog, rewrite a flag log, mark a result expert-validated, or drop a file outside the workspace. Markdown drafts are not checked for what they claim, so a person has to read them. Hooks don't intercept shell commands, and a session that moves here from another folder cannot find them, which blocks every write until you start a new session here; see [SECURITY.md](SECURITY.md).
+Skills are Markdown that tell Claude what the law provides and how to apply it. Everything Claude writes passes through two hooks, and structured files must match a JSON Schema. The agent can be wrong about the law. It cannot quietly save a finding that does not point at a catalog entry, edit the catalog, rewrite a flag log, mark a result expert-validated, or drop a file outside the workspace. Markdown drafts are not checked for what they claim, so a person has to read them. Hooks don't intercept shell commands; see [SECURITY.md](SECURITY.md).
 
 ## Guardrails
 
@@ -145,7 +145,7 @@ Skills are Markdown that tell Claude what the law provides and how to apply it. 
 | Novel methodology | `calc-result.schema.json` | `methodology_status` can only be `novel_persuasive`; never `established`. This covers results, not Markdown drafts. |
 | Expert gate | `write-guard.mjs`, `npm run validate` | An agent recording `expert_validated`, or anyone doing so without `validated_by` and `validated_at`. Nothing confirms the name is genuine, so review the diff. |
 | Catalog-only citations | `write-guard.mjs`, `npm run validate` | A finding whose `catalog_id` is not in the catalog or whose source or state differs from it, and any agent edit to the catalog. It can't check that a catalog entry is itself correct, or what a Markdown draft cites. |
-| Tests | `npm test`, GitHub Actions | Regressions in all of the above. 27 tests, Node's built-in runner. |
+| Tests | `npm test`, GitHub Actions | Regressions in all of the above. 28 tests, Node's built-in runner. |
 
 ## Methodology
 
