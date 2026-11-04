@@ -1,0 +1,77 @@
+{
+  "method": "HEA",
+  "methodology_status": "novel_persuasive",
+  "validation_status": "pending_expert_review",
+  "debit_dsay": 117.731231,
+  "credit_per_ha_dsay": 8.66649,
+  "restoration_area_needed_ha": 13.584649,
+  "scaling_ratio": 0.543386,
+  "inputs": {
+    "method": "HEA",
+    "label": "Illustrative wetland injury (synthetic): 25 ha degraded by effluent discharge",
+    "injured_area": 25,
+    "baseline_service": 1,
+    "injured_service": 0.3,
+    "injury_years": 3,
+    "recovery_years": 10,
+    "restoration_gain": 0.6,
+    "restoration_years": 20,
+    "restoration_lag": 2,
+    "discount_rate": 0.03,
+    "restoration_unit_cost": 500000,
+    "sensitivity_pct": 0.2
+  },
+  "sensitivity": [
+    {
+      "vary": "loss_fraction",
+      "factor": 0.8,
+      "debit_dsay": 94.184985,
+      "credit_per_ha_dsay": 8.66649,
+      "restoration_area_needed_ha": 10.86772,
+      "scaling_ratio": 0.434709
+    },
+    {
+      "vary": "loss_fraction",
+      "factor": 1,
+      "debit_dsay": 117.731231,
+      "credit_per_ha_dsay": 8.66649,
+      "restoration_area_needed_ha": 13.584649,
+      "scaling_ratio": 0.543386
+    },
+    {
+      "vary": "loss_fraction",
+      "factor": 1.2,
+      "debit_dsay": 141.277477,
+      "credit_per_ha_dsay": 8.66649,
+      "restoration_area_needed_ha": 16.301579,
+      "scaling_ratio": 0.652063
+    },
+    {
+      "vary": "discount_rate",
+      "factor": 0.8,
+      "debit_dsay": 120.219767,
+      "credit_per_ha_dsay": 9.221154,
+      "restoration_area_needed_ha": 13.037388,
+      "scaling_ratio": 0.521496
+    },
+    {
+      "vary": "discount_rate",
+      "factor": 1,
+      "debit_dsay": 117.731231,
+      "credit_per_ha_dsay": 8.66649,
+      "restoration_area_needed_ha": 13.584649,
+      "scaling_ratio": 0.543386
+    },
+    {
+      "vary": "discount_rate",
+      "factor": 1.2,
+      "debit_dsay": 115.339525,
+      "credit_per_ha_dsay": 8.157138,
+      "restoration_area_needed_ha": 14.139705,
+      "scaling_ratio": 0.565588
+    }
+  ],
+  "disclaimer": "Expert-witness input material, not a final compensation figure. REA/HEA is a persuasive comparative methodology with no documented NGT precedent; a qualified ecological expert must validate every assumption before filing.",
+  "generated": "2026-11-04T17:18:21.119Z",
+  "estimated_cost": 6792324.5
+}

@@ -18,6 +18,7 @@
     { "pattern": "AGENTS.md" },
     { "pattern": "CLAUDE.md" },
     { "pattern": "CONTRIBUTING.md" },
+    { "pattern": "CHANGELOG.md" },
     { "pattern": "LICENSE" },
     { "pattern": "package.json" },
     { "pattern": ".gitignore" }

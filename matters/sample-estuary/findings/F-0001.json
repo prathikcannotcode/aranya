@@ -1,0 +1,12 @@
+{
+  "finding_id": "F-0001",
+  "summary": "The NGT can order restitution of the environment and the cost of restoration for the degraded estuarine wetland; a restoration-scaled quantum sits under Schedule II head (g).",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "s.15(1)(c); Schedule II head (g)",
+  "severity": "high",
+  "recommendation": "Plead restitution of the environment under s.15(1)(c) and quantify the restoration cost with the REA/HEA calculator, presented as expert-witness input with its sensitivity range and an ecologist's validation.",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2025",
+  "verification": "source_cited",
+  "flag_id": "FL-0001",
+  "catalog_id": "ngt-s15"
+}

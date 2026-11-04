@@ -104,12 +104,24 @@ export function buildResult(p) {
   return result;
 }
 
+/** One-screen human-readable summary of a result. */
+export function summarise(r) {
+  const cost = r.estimated_cost !== undefined ? `, estimated restoration cost ${r.estimated_cost}` : '';
+  return [
+    `${r.method} equivalency analysis [${r.methodology_status}, ${r.validation_status}]`,
+    `  debit: ${r.debit_dsay} discounted service-hectare-years lost`,
+    `  restoration: ${r.restoration_area_needed_ha} ha needed (scaling ratio ${r.scaling_ratio})${cost}`,
+    `  sensitivity rows: ${r.sensitivity.length}. ${r.disclaimer}`,
+  ].join('\n');
+}
+
 // --- CLI ------------------------------------------------------------------
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const file = process.argv[2];
   if (!file) { console.error('usage: hea-rea.mjs <params.json> [--out result.json]'); process.exit(1); }
   const params = JSON.parse(readFileSync(file, 'utf8'));
   const result = buildResult(params);
+  console.error(summarise(result));
   const outIdx = process.argv.indexOf('--out');
   if (outIdx !== -1 && process.argv[outIdx + 1]) {
     writeFileSync(process.argv[outIdx + 1], JSON.stringify(result, null, 2) + '\n');

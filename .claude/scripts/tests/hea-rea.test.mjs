@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { computeDebit, computeCreditPerHa, scaleRestoration, buildResult } from '../hea-rea.mjs';
+import { computeDebit, computeCreditPerHa, scaleRestoration, buildResult, summarise } from '../hea-rea.mjs';
 import { loadSchema, validate } from '../lib.mjs';
 
 // Hand-checkable worked example (discount rate 0 so the arithmetic is exact):
@@ -65,4 +65,10 @@ test('injury parameters are schema-gated', () => {
   assert.ok(validate(params, { ...worked, baseline_service: 5 }).length > 0);
   const { method, ...noMethod } = worked;
   assert.ok(validate(params, noMethod).length > 0);
+});
+
+test('summarise is a human-readable one-screen string', () => {
+  const s = summarise(buildResult({ ...worked, discount_rate: 0.03 }));
+  assert.match(s, /HEA/);
+  assert.match(s, /pending_expert_review/);
 });

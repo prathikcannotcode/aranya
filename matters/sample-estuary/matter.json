@@ -1,0 +1,8 @@
+{
+  "matter_id": "sample-estuary",
+  "title": "Illustrative: effluent discharge degrading the Nayar estuary (synthetic)",
+  "forum": "ngt",
+  "description": "Synthetic demonstration matter shipped with the repo so you can see Aranya's output before using it. A tannery cluster's untreated effluent is alleged to have degraded a 25 ha estuarine wetland. Not a real case; parties and facts are invented.",
+  "created": "2026-11-04T00:00:00Z",
+  "law_as_at": "2026-11-04"
+}
