@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Aranya legal catalog",
+  "description": "The provision-indexed spine. Flags resolve to items here; every legal claim an agent makes should trace to one of these entries.",
+  "type": "object",
+  "required": ["law_as_at", "disclaimer", "instruments", "provisions"],
+  "properties": {
+    "law_as_at": { "type": "string", "format": "date" },
+    "disclaimer": { "type": "string", "minLength": 1 },
+    "instruments": { "type": "array", "items": { "$ref": "sourced-item.schema.json" } },
+    "provisions": { "type": "array", "items": { "$ref": "sourced-item.schema.json" } },
+    "doctrines": { "type": "array", "items": { "$ref": "sourced-item.schema.json" } },
+    "cases": { "type": "array", "items": { "$ref": "sourced-item.schema.json" } },
+    "methodologies": { "type": "array", "items": { "$ref": "sourced-item.schema.json" } }
+  },
+  "additionalProperties": false
+}

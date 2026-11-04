@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Matter header",
+  "type": "object",
+  "required": ["matter_id", "title", "created"],
+  "properties": {
+    "matter_id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "forum": { "type": "string", "enum": ["ngt", "high_court_writ", "supreme_court", "criminal", "appellate_authority", "scheduled_act_authority", "other", "undetermined"] },
+    "description": { "type": "string" },
+    "created": { "type": "string", "format": "date-time" },
+    "law_as_at": { "type": "string", "format": "date" }
+  },
+  "additionalProperties": true
+}

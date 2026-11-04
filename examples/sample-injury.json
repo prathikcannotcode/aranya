@@ -1,0 +1,15 @@
+{
+  "method": "HEA",
+  "label": "Illustrative wetland injury (synthetic): 25 ha degraded by effluent discharge",
+  "injured_area": 25,
+  "baseline_service": 1.0,
+  "injured_service": 0.3,
+  "injury_years": 3,
+  "recovery_years": 10,
+  "restoration_gain": 0.6,
+  "restoration_years": 20,
+  "restoration_lag": 2,
+  "discount_rate": 0.03,
+  "restoration_unit_cost": 500000,
+  "sensitivity_pct": 0.2
+}

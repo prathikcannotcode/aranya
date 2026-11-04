@@ -1,0 +1,16 @@
+{
+  "name": "aranya",
+  "version": "0.1.0",
+  "description": "Open-source Indian environmental-law workspace agent: case analysis, EIA review and restoration-scaled damage (REA/HEA) arguments as Claude Code skills",
+  "license": "Apache-2.0",
+  "keywords": ["environmental-law", "india", "ngt", "eia", "rea", "hea", "claude-code", "agent"],
+  "scripts": {
+    "validate": "node .claude/scripts/validate.mjs",
+    "audit": "node .claude/scripts/validate.mjs --strict",
+    "test": "node --test .claude/scripts/tests/*.test.mjs",
+    "calc": "node .claude/scripts/hea-rea.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

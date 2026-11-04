@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "REA/HEA injury and restoration parameters",
+  "description": "Inputs to the equivalency calculator. Areas in hectares; service levels as a fraction of baseline (0..1). Every value is an expert input, not a lookup; vary the contested ones with the sensitivity range.",
+  "type": "object",
+  "required": ["method", "injured_area", "baseline_service", "injured_service", "injury_years", "recovery_years", "restoration_gain", "restoration_years", "discount_rate"],
+  "properties": {
+    "method": { "type": "string", "enum": ["HEA", "REA"] },
+    "label": { "type": "string" },
+    "injured_area": { "type": "number", "minimum": 0 },
+    "baseline_service": { "type": "number", "minimum": 0, "maximum": 1 },
+    "injured_service": { "type": "number", "minimum": 0, "maximum": 1 },
+    "injury_years": { "type": "integer", "minimum": 0 },
+    "recovery_years": { "type": "integer", "minimum": 0 },
+    "restoration_gain": { "type": "number", "minimum": 0, "maximum": 1 },
+    "restoration_years": { "type": "integer", "minimum": 1 },
+    "restoration_lag": { "type": "integer", "minimum": 0 },
+    "discount_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+    "restoration_unit_cost": { "type": "number", "minimum": 0 },
+    "sensitivity_pct": { "type": "number", "minimum": 0, "maximum": 1 }
+  },
+  "additionalProperties": false
+}

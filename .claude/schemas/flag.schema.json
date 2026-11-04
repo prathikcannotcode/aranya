@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Flagged section",
+  "description": "A user- or agent-raised flag against a specific section: a statutory provision, an EC/EIA condition, a judgment paragraph, or a report clause.",
+  "type": "object",
+  "required": ["flag_id", "matter_id", "target", "concern", "raised_by", "status", "created"],
+  "properties": {
+    "flag_id": { "type": "string", "minLength": 1 },
+    "matter_id": { "type": "string", "minLength": 1 },
+    "target": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": { "type": "string", "enum": ["provision", "document"] },
+        "instrument": { "type": "string" },
+        "section": { "type": "string" },
+        "catalog_id": { "type": "string" },
+        "document": { "type": "string" },
+        "locator": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "concern": { "type": "string", "minLength": 1 },
+    "raised_by": { "type": "string" },
+    "status": { "type": "string", "enum": ["open", "in_review", "resolved", "withdrawn"] },
+    "created": { "type": "string", "format": "date-time" },
+    "linked_findings": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Analysis finding",
+  "description": "One analysis point, tied to a clause. Mirrors Vigil's finding discipline: cite the provision, state severity, give a recommendation, and carry a verification state.",
+  "type": "object",
+  "required": ["finding_id", "summary", "instrument", "provision", "severity", "recommendation", "source_url", "verification"],
+  "properties": {
+    "finding_id": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "instrument": { "type": "string", "minLength": 1 },
+    "provision": { "type": "string", "minLength": 1 },
+    "severity": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+    "recommendation": { "type": "string", "minLength": 1 },
+    "source_url": { "type": "string", "format": "uri" },
+    "verification": { "type": "string", "enum": ["source_cited", "verify", "unverified"] },
+    "flag_id": { "type": "string" },
+    "catalog_id": { "type": "string" }
+  },
+  "additionalProperties": true
+}

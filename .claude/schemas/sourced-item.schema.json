@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sourced catalog item",
+  "description": "A statute, provision, doctrine, case or methodology. Every item must carry a source and a verification state; nothing reaches a court-facing output while `verification` is `unverified`.",
+  "type": "object",
+  "required": ["id", "source_url", "verification"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "label": { "type": "string" },
+    "citation": { "type": "string" },
+    "section": { "type": "string" },
+    "instrument_id": { "type": "string" },
+    "summary": { "type": "string" },
+    "principle": { "type": "string" },
+    "year": { "type": "integer" },
+    "in_force": { "type": "boolean" },
+    "commencement": { "type": "string" },
+    "source_url": { "type": "string", "format": "uri" },
+    "verification": { "type": "string", "enum": ["source_cited", "verify", "unverified"] },
+    "methodology_status": { "type": "string", "enum": ["novel_persuasive"] },
+    "note": { "type": "string" }
+  },
+  "additionalProperties": true
+}

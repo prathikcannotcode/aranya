@@ -1,0 +1,25 @@
+{
+  "title": "Aranya workspace layout",
+  "description": "Every path an agent may write, with the schema each JSON/JSONL file must satisfy. `*` matches one path segment, `**` matches any depth. First match wins, so specific rules come first. The write-guard and validate scripts both read this file.",
+  "paths": [
+    { "pattern": "catalog/provisions.json", "schema": "catalog.schema.json", "description": "Provision-indexed legal catalog: statutes, doctrines, cases, methodologies" },
+    { "pattern": "matters/*/matter.json", "schema": "matter.schema.json", "description": "Matter header: parties, forum, dates" },
+    { "pattern": "matters/*/flags.jsonl", "schema": "flag.schema.json", "append_only": true, "description": "Append-only log of flagged sections (provisions, EC conditions, report clauses)" },
+    { "pattern": "matters/*/findings/*.json", "schema": "finding.schema.json", "description": "Analysis findings, each citing a clause" },
+    { "pattern": "matters/*/calc/*.json", "schema": "calc-result.schema.json", "description": "REA/HEA calculator runs" },
+    { "pattern": "matters/*/**", "description": "Chronology, analysis notes and argument drafts" },
+    { "pattern": "matters/.gitkeep", "description": "Keeps the empty directory in git" },
+    { "pattern": "catalog/**", "description": "Catalog source extracts and notes" },
+    { "pattern": "examples/**", "description": "Worked examples and sample inputs" },
+    { "pattern": ".claude/**", "description": "Harness assets: skills, schemas, scripts, settings" },
+    { "pattern": ".github/**", "description": "CI workflows and issue templates" },
+    { "pattern": "docs/**", "description": "Documentation and images" },
+    { "pattern": "README.md" },
+    { "pattern": "AGENTS.md" },
+    { "pattern": "CLAUDE.md" },
+    { "pattern": "CONTRIBUTING.md" },
+    { "pattern": "LICENSE" },
+    { "pattern": "package.json" },
+    { "pattern": ".gitignore" }
+  ]
+}
