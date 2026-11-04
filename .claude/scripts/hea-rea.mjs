@@ -85,9 +85,13 @@ function round(x) { return Number.isFinite(x) ? Math.round(x * 1e6) / 1e6 : x; }
 /** Full, schema-valid result object. */
 export function buildResult(p) {
   const core = scaleRestoration(p);
+  if (!Number.isFinite(core.restoration_area_needed_ha)) {
+    throw new Error('restoration parameters yield no positive service credit (check restoration_gain and restoration_years).');
+  }
   const result = {
     method: p.method,
     methodology_status: 'novel_persuasive',
+    validation_status: 'pending_expert_review',
     ...core,
     inputs: { ...p },
     sensitivity: runSensitivity(p),

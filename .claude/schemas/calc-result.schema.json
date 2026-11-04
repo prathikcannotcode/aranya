@@ -3,10 +3,11 @@
   "title": "REA/HEA calculator result",
   "description": "Expert-witness input material, not a final compensation figure. `methodology_status` can only be `novel_persuasive`: the schema itself forbids presenting equivalency analysis as established Indian law.",
   "type": "object",
-  "required": ["method", "methodology_status", "debit_dsay", "credit_per_ha_dsay", "restoration_area_needed_ha", "scaling_ratio", "inputs", "disclaimer", "generated"],
+  "required": ["method", "methodology_status", "validation_status", "debit_dsay", "credit_per_ha_dsay", "restoration_area_needed_ha", "scaling_ratio", "inputs", "disclaimer", "generated"],
   "properties": {
     "method": { "type": "string", "enum": ["HEA", "REA"] },
     "methodology_status": { "type": "string", "enum": ["novel_persuasive"] },
+    "validation_status": { "type": "string", "enum": ["pending_expert_review", "expert_validated"] },
     "debit_dsay": { "type": "number", "minimum": 0 },
     "credit_per_ha_dsay": { "type": "number", "minimum": 0 },
     "restoration_area_needed_ha": { "type": "number", "minimum": 0 },

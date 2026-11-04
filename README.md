@@ -1,6 +1,8 @@
 # Aranya
 
-Open-source Indian environmental-law workspace agent. Aranya runs on Claude Code as a set of skills, mirroring the architecture of the Vigil privacy agent inside which it is currently staged. It is a separate project and is meant to be lifted into its own repository.
+[![CI](https://github.com/prathikcannotcode/aranya/actions/workflows/ci.yml/badge.svg)](https://github.com/prathikcannotcode/aranya/actions/workflows/ci.yml)
+
+Open-source Indian environmental-law workspace agent that runs on Claude Code as a set of skills. It helps analyse an environmental matter, review an EIA or Environmental Clearance, and build a restoration-scaled damage argument for the National Green Tribunal using Resource/Habitat Equivalency Analysis. It is tooling, not legal advice (see Status, scope and limitations).
 
 ## What it does
 
@@ -14,11 +16,14 @@ All of it rests on `env-catalog`, the provision-indexed legal spine.
 
 Any provision, EC condition, judgment paragraph or report clause can be flagged. A flag is an anchored record in a matter's append-only `flags.jsonl`; skills resolve, explain, test, or argue against it.
 
-## What it is not
+## Status, scope and limitations
 
-- Not legal advice. Tooling that a qualified lawyer and, for damage figures, a qualified ecological expert must review.
-- REA/HEA is a **novel persuasive methodology** in India: there is no documented NGT precedent for it. The schema forbids presenting it as established law.
-- The draft EIA Notification 2020 is not in force; only the 2006 Notification is applied.
+- **Pre-release (v0.1).** The catalog is a verified seed, not an exhaustive statement of the law. Every entry records a `source_url` and a verification state; entries still needing a human pinpoint check are flagged in their `note`.
+- **Not legal advice.** Tooling that a qualified lawyer, and for damage figures a qualified ecological expert, must review. Every calculator result is stamped `validation_status: pending_expert_review` until a named expert validates its inputs.
+- **REA/HEA is a novel persuasive methodology in India:** there is no documented NGT or Indian precedent. The schema forbids presenting it as established law (`methodology_status` can only be `novel_persuasive`).
+- **A range, not a figure.** The calculator always returns a sensitivity range; the service-loss fraction is contested expert judgement, not a lookup.
+- Only the EIA Notification 2006 is applied; the draft 2020 is not in force.
+- See [docs/METHODOLOGY.md](docs/METHODOLOGY.md) for the equations and their limits, and [CONTRIBUTING.md](CONTRIBUTING.md) for the citation-verification discipline.
 
 ## Layout
 

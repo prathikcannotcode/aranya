@@ -29,6 +29,7 @@ Size compensatory restoration by matching the discounted ecological-service loss
 
 - The service-loss fraction is a contested expert judgement, not a lookup. A qualified ecological expert must validate every input before filing.
 - Output is always `methodology_status: novel_persuasive`; the schema forbids an "established" status.
+- Every result carries `validation_status: pending_expert_review`; only a named human expert may record it as `expert_validated`.
 - Keep HEA (habitat) and REA (specific resource services) distinct; state which was used and why.
 - Tooling, not legal advice.
 

@@ -36,7 +36,33 @@ test('discounting lowers both debit and credit', () => {
 test('result is schema-valid and cannot claim established status', () => {
   const result = buildResult({ ...worked, discount_rate: 0.03, restoration_unit_cost: 200000 });
   assert.equal(result.methodology_status, 'novel_persuasive');
+  assert.equal(result.validation_status, 'pending_expert_review');
   assert.ok(result.estimated_cost > 0);
   const errors = validate(loadSchema('calc-result.schema.json'), result);
   assert.deepEqual(errors, [], errors.join('; '));
+});
+
+test('REA runs and stays pending expert review', () => {
+  const result = buildResult({ ...worked, method: 'REA', discount_rate: 0.03 });
+  assert.equal(result.method, 'REA');
+  assert.equal(result.validation_status, 'pending_expert_review');
+  assert.deepEqual(validate(loadSchema('calc-result.schema.json'), result), []);
+});
+
+test('restoration lag lowers the per-hectare credit', () => {
+  const noLag = computeCreditPerHa({ ...worked, discount_rate: 0.05, restoration_lag: 0 });
+  const lag = computeCreditPerHa({ ...worked, discount_rate: 0.05, restoration_lag: 3 });
+  assert.ok(lag < noLag);
+});
+
+test('zero service credit is rejected, not reported as infinite', () => {
+  assert.throws(() => buildResult({ ...worked, restoration_gain: 0 }));
+});
+
+test('injury parameters are schema-gated', () => {
+  const params = loadSchema('injury-params.schema.json');
+  assert.deepEqual(validate(params, worked), []);
+  assert.ok(validate(params, { ...worked, baseline_service: 5 }).length > 0);
+  const { method, ...noMethod } = worked;
+  assert.ok(validate(params, noMethod).length > 0);
 });
