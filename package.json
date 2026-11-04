@@ -1,8 +1,15 @@
 {
   "name": "aranya",
   "version": "0.1.0",
+  "private": true,
   "description": "Open-source Indian environmental-law workspace agent: case analysis, EIA review and restoration-scaled damage (REA/HEA) arguments as Claude Code skills",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prathikcannotcode/aranya.git"
+  },
+  "homepage": "https://github.com/prathikcannotcode/aranya#readme",
+  "bugs": "https://github.com/prathikcannotcode/aranya/issues",
   "keywords": ["environmental-law", "india", "ngt", "eia", "rea", "hea", "claude-code", "agent"],
   "scripts": {
     "validate": "node .claude/scripts/validate.mjs",

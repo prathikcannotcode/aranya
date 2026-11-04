@@ -36,7 +36,7 @@ It will not tell you the Tribunal will accept it. It tells you exactly which sec
 
 ## What a matter looks like
 
-The repo ships with **sample-estuary**, a synthetic matter (a tannery cluster's effluent degrading a 25 ha estuarine wetland), so you can see real output before pointing Aranya at anything of yours:
+The repo ships with **sample-estuary**, a synthetic matter (a tannery cluster's effluent degrading a 25 ha estuarine wetland), so you can see the format before pointing Aranya at anything of yours. The calculator run is real output you can reproduce; the matter, flags and finding were written by hand:
 
 - [`matter.json`](matters/sample-estuary/matter.json): the matter header, forum set to the NGT
 - [`flags.jsonl`](matters/sample-estuary/flags.jsonl): two flagged sections, a statutory provision and an EC condition, append-only
@@ -48,8 +48,9 @@ The calculator's own summary of that run:
 ```text
 HEA equivalency analysis [novel_persuasive, pending_expert_review]
   debit: 117.73 discounted service-hectare-years lost
-  restoration: 13.58 ha needed (scaling ratio 0.54), estimated restoration cost 6792324.5
-  sensitivity rows: 6. Expert-witness input material, not a final compensation figure...
+  restoration: 10.87 to 16.98 ha across the sensitivity range; 13.58 ha at the stated inputs (scaling ratio 0.54)
+  cost: INR 54,33,860 to INR 84,90,406; INR 67,92,325 at the stated inputs
+  Expert-witness input material, not a final compensation figure...
 ```
 
 The figures are illustrative and synthetic. The point is the shape: a debit, a restoration scale, a cost, a range, and a status that stays `pending_expert_review` until a named expert validates the inputs.
@@ -58,9 +59,9 @@ The figures are illustrative and synthetic. The point is the shape: a debit, a r
 
 | | Ad hoc quantum | Consultant's damage report | **Aranya** |
 |---|---|---|---|
-| Cites the statute or judgment per point | Sometimes | In a PDF | **Every finding; the schema rejects one without a source and a verification state** |
+| Cites the statute or judgment per point | Sometimes | In a PDF | **Every finding; validation rejects one that does not point at a catalog entry** |
 | Shows how the number was derived | Rarely | Proprietary model | **A deterministic calculator you can read and re-run, with a sensitivity range** |
-| Honest about precedent | Varies | Varies | **Stamps REA/HEA `novel_persuasive`; the schema forbids calling it settled law** |
+| Honest about precedent | Varies | Varies | **Stamps every result `novel_persuasive`; the result schema allows nothing else** |
 | Where your matter data goes | — | The firm's systems | **Your machine and your model provider. No Aranya server.** |
 | Output | Prose | A report | **Schema-valid JSON and Markdown, in a per-matter workspace** |
 | Cost | — | Fees | **Free (Apache 2.0), plus model usage** |
@@ -131,19 +132,20 @@ flowchart LR
     calc["hea-rea.mjs"] -->|"deterministic"| ws
 ```
 
-Skills are Markdown that tell Claude what the law provides and how to apply it. Everything Claude writes passes through two hooks and must match a JSON Schema. The agent can be wrong about the law. It cannot quietly write a finding with no source, rewrite a flag log, present REA/HEA as settled, or drop a file outside the workspace.
+Skills are Markdown that tell Claude what the law provides and how to apply it. Everything Claude writes passes through two hooks, and structured files must match a JSON Schema. The agent can be wrong about the law. It cannot quietly save a finding that does not point at a catalog entry, edit the catalog, rewrite a flag log, mark a result expert-validated, or drop a file outside the workspace. Markdown drafts are not checked for what they claim, so a person has to read them. Hooks don't intercept shell commands, and a session that moves here from another folder cannot find them, which blocks every write until you start a new session here; see [SECURITY.md](SECURITY.md).
 
 ## Guardrails
 
 | Guard | Enforced by | What it stops |
 |---|---|---|
-| Workspace layout | `write-guard.mjs` reading [`layout.json`](.claude/schemas/layout.json) | Writes to any path the layout does not list; path traversal out of the repo |
+| Workspace layout | `write-guard.mjs` reading [`layout.json`](.claude/schemas/layout.json) | Writes to any path the layout does not list, path traversal out of the repo, and edits to the hooks, schemas and settings themselves |
 | Append-only flags | `write-guard.mjs` | Edits to a matter's `flags.jsonl`; a change is a new line |
 | Schema validation | `validate-on-write.mjs`, `npm run validate` | A finding with no clause, source or verification state; a result with no `methodology_status` |
-| Novel methodology | `calc-result.schema.json` | `methodology_status` can only be `novel_persuasive`; never `established` |
-| Expert gate | `calc-result.schema.json` | Every result is `validation_status: pending_expert_review` until a named expert validates it |
-| No fabricated citations | catalog shape and skill rules | A legal claim with no `source_url` and verification state reaching a court-facing output |
-| Tests | `npm test`, GitHub Actions | Regressions in all of the above. 8 tests, Node's built-in runner. |
+| Calculator inputs | `hea-rea.mjs` reading `injury-params.schema.json` | A discount rate of 3 instead of 0.03, a missing input, a mistyped field, injured service above baseline |
+| Novel methodology | `calc-result.schema.json` | `methodology_status` can only be `novel_persuasive`; never `established`. This covers results, not Markdown drafts. |
+| Expert gate | `write-guard.mjs`, `npm run validate` | An agent recording `expert_validated`, or anyone doing so without `validated_by` and `validated_at`. Nothing confirms the name is genuine, so review the diff. |
+| Catalog-only citations | `write-guard.mjs`, `npm run validate` | A finding whose `catalog_id` is not in the catalog or whose source or state differs from it, and any agent edit to the catalog. It can't check that a catalog entry is itself correct, or what a Markdown draft cites. |
+| Tests | `npm test`, GitHub Actions | Regressions in all of the above. 27 tests, Node's built-in runner. |
 
 ## Methodology
 
@@ -169,7 +171,7 @@ Last verified **4 November 2026**. Entries trace to the Gazette of India, [India
 | `.claude/schemas/` | JSON Schemas and `layout.json`, the list of writable paths |
 | `.claude/scripts/` | The write-guard and validate hooks, `lib.mjs`, and `hea-rea.mjs` |
 | `catalog/provisions.json` | The source-cited legal catalog |
-| `matters/{id}/` | Per-matter workspace: `matter.json`, `flags.jsonl`, `findings/`, `calc/` |
+| `matters/{id}/` | Per-matter workspace: `matter.json`, `flags.jsonl`, `findings/`, `calc/`. Gitignored except the synthetic sample. |
 | `docs/` | [METHODOLOGY.md](docs/METHODOLOGY.md) and a [handoff brief](docs/handoff-rea-hea-note.md) for a short paper |
 
 ## FAQ
@@ -180,13 +182,13 @@ Last verified **4 November 2026**. Entries trace to the Gazette of India, [India
 
 **Where do the numbers come from?** A deterministic calculator you can read. Every input is an expert judgement, so the output is a range, validated by an ecologist, never a single authoritative figure.
 
-**Does my matter data leave my machine?** Aranya has no server and no telemetry. Claude Code sends the files it reads to your model provider, as it does on any repo.
+**Does my matter data leave my machine?** Aranya has no server and no telemetry. Claude Code sends the files it reads to your model provider, as it does on any repo. Your matters are gitignored by default, so a `git add .` in a public fork won't publish a client's file.
 
-**Can I trust the catalog?** Each entry carries a `source_url` and a verification state. Confirm anything marked `verify` against the primary source before it goes into a filing; see [CONTRIBUTING.md](CONTRIBUTING.md).
+**Can I trust the catalog?** Each entry carries a `source_url` and a verification state, and agents can't edit it. Read the entry's `note` as well: some list points still to confirm, such as case pinpoints. Confirm against the primary source before anything goes into a filing; see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Contributing
 
-Verified catalog entries, corrected pinpoints, and sector-specific checklists are the most useful contributions. Read [CONTRIBUTING.md](CONTRIBUTING.md), then [AGENTS.md](AGENTS.md), which binds human and AI contributors alike. Changes are listed in [CHANGELOG.md](CHANGELOG.md).
+Verified catalog entries, corrected pinpoints, and sector-specific checklists are the most useful contributions. Read [CONTRIBUTING.md](CONTRIBUTING.md), then [AGENTS.md](AGENTS.md), which binds human and AI contributors alike. Report vulnerabilities through [SECURITY.md](SECURITY.md). Changes are listed in [CHANGELOG.md](CHANGELOG.md).
 
 ## Disclaimer
 

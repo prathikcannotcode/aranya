@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Analysis finding",
-  "description": "One analysis point, tied to a clause. Mirrors Vigil's finding discipline: cite the provision, state severity, give a recommendation, and carry a verification state.",
+  "description": "One analysis point, tied to a clause: cite the provision, state severity, give a recommendation, and carry a verification state. `catalog_id` must name an entry in catalog/provisions.json, and `source_url` and `verification` must match it.",
   "type": "object",
-  "required": ["finding_id", "summary", "instrument", "provision", "severity", "recommendation", "source_url", "verification"],
+  "required": ["finding_id", "summary", "instrument", "provision", "severity", "recommendation", "source_url", "verification", "catalog_id"],
   "properties": {
     "finding_id": { "type": "string", "minLength": 1 },
     "summary": { "type": "string", "minLength": 1 },

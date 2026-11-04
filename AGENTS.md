@@ -4,7 +4,7 @@ These rules bind all agents (AI and human) working in this repository.
 
 ## Layout
 
-Only write files matching the paths in `.claude/schemas/layout.json`. A new file type needs a rule there and, if it is structured data, a schema. The write-guard hook enforces this.
+Only write files matching the paths in `.claude/schemas/layout.json`. A new file type needs a rule there and, if it is structured data, a schema. The write-guard hook enforces this. Agents do not edit `.claude/scripts`, `.claude/schemas`, `.claude/settings.json` or `catalog/provisions.json`; a human changes those by hand.
 
 ## Structured data
 
@@ -17,9 +17,9 @@ Only write files matching the paths in `.claude/schemas/layout.json`. A new file
 
 ## Findings and citations
 
-Every finding must follow `finding.schema.json`: cite the instrument and provision, carry a severity, give a recommendation, and record a `source_url` and a `verification` state.
+Every finding must follow `finding.schema.json`: cite the instrument and provision, carry a severity, give a recommendation, and record a `catalog_id`, `source_url` and `verification` state. Validation checks all three against the catalog.
 
-- **Never fabricate a citation.** Every legal claim traces to an entry in `catalog/provisions.json`.
+- **Never fabricate a citation.** Every legal claim traces to an entry in `catalog/provisions.json`. If the provision is not there, raise a flag naming it and tell the user the catalog needs an entry; do not write a finding on it.
 - A claim whose catalog entry is `verify` or `unverified` must not appear in a court-facing document until a named human confirms it against the primary source.
 
 ## Methodology status
@@ -33,7 +33,7 @@ REA/HEA has no documented NGT or Indian precedent. Any calculator or argument ou
 
 ## Verify before asserting
 
-The seed catalog carries several `verify` items (the exact Schedule I enumeration, case pinpoints, statute deep links, the EIA 2006 amended text). Confirm against primary sources (Gazette, indiacode.nic.in, greentribunal.gov.in, the SCC reports) before relying on them.
+Read each catalog entry's `note` as well as its `verification` state: several list points still to confirm, such as case pinpoints. Confirm against primary sources (Gazette, indiacode.nic.in, greentribunal.gov.in, the SCC reports) before relying on them.
 
 ## Disclaimer
 

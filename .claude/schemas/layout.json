@@ -1,8 +1,8 @@
 {
   "title": "Aranya workspace layout",
-  "description": "Every path an agent may write, with the schema each JSON/JSONL file must satisfy. `*` matches one path segment, `**` matches any depth. First match wins, so specific rules come first. The write-guard and validate scripts both read this file.",
+  "description": "Every path an agent may write, with the schema each JSON/JSONL file must satisfy. `*` matches one path segment, `**` matches any depth. First match wins, so specific rules come first. A `readonly` rule is validated but only a human may change the file. The write-guard and validate scripts both read this file.",
   "paths": [
-    { "pattern": "catalog/provisions.json", "schema": "catalog.schema.json", "description": "Provision-indexed legal catalog: statutes, doctrines, cases, methodologies" },
+    { "pattern": "catalog/provisions.json", "schema": "catalog.schema.json", "readonly": true, "description": "Provision-indexed legal catalog: statutes, doctrines, cases, methodologies" },
     { "pattern": "matters/*/matter.json", "schema": "matter.schema.json", "description": "Matter header: parties, forum, dates" },
     { "pattern": "matters/*/flags.jsonl", "schema": "flag.schema.json", "append_only": true, "description": "Append-only log of flagged sections (provisions, EC conditions, report clauses)" },
     { "pattern": "matters/*/findings/*.json", "schema": "finding.schema.json", "description": "Analysis findings, each citing a clause" },
@@ -11,7 +11,7 @@
     { "pattern": "matters/.gitkeep", "description": "Keeps the empty directory in git" },
     { "pattern": "catalog/**", "description": "Catalog source extracts and notes" },
     { "pattern": "examples/**", "description": "Worked examples and sample inputs" },
-    { "pattern": ".claude/**", "description": "Harness assets: skills, schemas, scripts, settings" },
+    { "pattern": ".claude/skills/**", "description": "Skills. Hooks, schemas and settings are left out on purpose: agents must not edit their own guards" },
     { "pattern": ".github/**", "description": "CI workflows and issue templates" },
     { "pattern": "docs/**", "description": "Documentation and images" },
     { "pattern": "README.md" },
@@ -19,8 +19,11 @@
     { "pattern": "CLAUDE.md" },
     { "pattern": "CONTRIBUTING.md" },
     { "pattern": "CHANGELOG.md" },
+    { "pattern": "CITATION.cff" },
+    { "pattern": "SECURITY.md" },
     { "pattern": "LICENSE" },
     { "pattern": "package.json" },
-    { "pattern": ".gitignore" }
+    { "pattern": ".gitignore" },
+    { "pattern": ".gitattributes" }
   ]
 }

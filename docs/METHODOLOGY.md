@@ -4,7 +4,7 @@ The calculator sizes compensatory restoration by setting the discounted ecologic
 
 ## The equations
 
-Let `r` = discount rate, areas in hectares, service levels a fraction of baseline (0..1).
+Let `r` = discount rate as a fraction, areas in hectares, service levels a fraction of baseline (0..1). Time `t = 0` is the start of the injury, and everything is discounted back to it, so `restoration_lag` counts years from the start of the injury, not from the decision to restore.
 
 **Debit** (discounted service-hectare-years lost):
 
@@ -29,7 +29,9 @@ scaling_ratio = area_needed / injured_area
 estimated_cost = area_needed x restoration_unit_cost   (unit cost is an expert input; optional)
 ```
 
-If the credit is zero or negative the calculator throws rather than report an infinite area.
+If the credit is zero or negative the calculator throws rather than report an infinite area. It also refuses inputs that fail `injury-params.schema.json`, or an injured service level above baseline.
+
+**Sensitivity:** each input moves by `sensitivity_pct` (default 20%) one at a time: the service-loss fraction, discount rate, restoration gain, restoration years, recovery years, injury years and restoration lag. Whole-year inputs move by at least one year. `range` reports the lowest and highest area, and cost if a unit cost is given.
 
 ## Worked example (the self-check, r = 0)
 
@@ -41,7 +43,9 @@ This is asserted exactly in `.claude/scripts/tests/hea-rea.test.mjs`.
 
 ## Assumptions and their limits
 
-- Linear recovery and a constant restoration gain are simplifications; real trajectories vary. The tool always reports a **sensitivity range** over the service-loss fraction and the discount rate, and must never be reduced to a single figure.
+- Linear recovery and a constant restoration gain are simplifications; real trajectories vary. A restored site delivering its full gain from year one will tend to understate the area needed.
+- Each year's loss is counted at the end of that year, so the last recovery year counts as zero. For recovery alone this reads about 10% below the continuous figure over 10 years.
+- The tool always reports a **sensitivity range**, which must never be reduced to a single figure. It moves one input at a time, so it is not a worst case: inputs moving together can fall outside it.
 - The **service-loss fraction** (`baseline - injured`) is the most contested input and a matter of expert judgement, not a lookup.
 - The **discount rate** is a policy and economic choice; state it and test alternatives.
 - The calculator sizes restoration to offset injury; it is not a route to a damages windfall.

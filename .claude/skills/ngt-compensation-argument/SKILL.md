@@ -1,6 +1,6 @@
 ---
 name: ngt-compensation-argument
-description: Assemble a restoration-scaled compensation argument for the NGT from the catalog and a calculator run: the Tribunal's power, the polluter-pays principle, REA/HEA as a persuasive comparative method, and the quantified restoration scale with its range. Use for "argue for compensation", "NGT damage argument", "restoration-scaled compensation".
+description: "Assemble a restoration-scaled compensation argument for the NGT from the catalog and a calculator run: the Tribunal's power, the polluter-pays principle, REA/HEA as a persuasive comparative method, and the quantified restoration scale with its range. Use for \"argue for compensation\", \"NGT damage argument\", \"restoration-scaled compensation\"."
 ---
 
 # NGT compensation argument

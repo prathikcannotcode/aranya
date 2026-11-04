@@ -18,7 +18,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node .claude/scripts/write-guard.mjs"
+            "command": "node \"${CLAUDE_PROJECT_DIR}\"/.claude/scripts/write-guard.mjs",
+            "onFailure": "block"
           }
         ]
       }
@@ -29,7 +30,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node .claude/scripts/validate-on-write.mjs"
+            "command": "node \"${CLAUDE_PROJECT_DIR}\"/.claude/scripts/validate-on-write.mjs"
           }
         ]
       }

@@ -4,7 +4,7 @@ Read AGENTS.md before doing anything. It is the operating contract.
 
 ## Project
 
-Open-source Indian environmental-law workspace agent. Skills run on Claude Code. Separate project from Vigil (the privacy agent in whose repo it is currently staged under `aranya/`); intended to be lifted into its own repository.
+Open-source Indian environmental-law workspace agent. Skills run on Claude Code.
 
 ## Structure
 

@@ -4,10 +4,31 @@
  */
 
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
-import { join, extname, relative } from 'node:path';
+import { join, extname, relative, resolve, dirname } from 'node:path';
 
 const SCHEMA_DIR = '.claude/schemas';
 const SKIP_DIRS = new Set(['.git', 'node_modules']);
+
+/** The nearest directory at or above `start` holding a workspace layout, so hooks survive a `cd` and worktrees. */
+export function workspaceRoot(start = process.cwd()) {
+  for (let dir = resolve(start); ; dir = dirname(dir)) {
+    if (existsSync(join(dir, SCHEMA_DIR, 'layout.json'))) return dir;
+    if (dirname(dir) === dir) return undefined;
+  }
+}
+
+/** Problems with a SKILL.md frontmatter. A bare `: ` or ` #` in a value is not valid YAML. */
+export function frontmatterErrors(text, name) {
+  const front = text.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
+  const errors = [];
+  if (!new RegExp(`^name: ${name}\\s*$`, 'm').test(front)) errors.push(`frontmatter needs "name: ${name}"`);
+  const description = front.match(/^description: (.+?)\s*$/m)?.[1];
+  if (!description) errors.push('frontmatter needs a description');
+  else if (description.startsWith('"') ? !/^"(?:[^"\\]|\\.)*"$/.test(description) : /: | #/.test(description)) {
+    errors.push('description is not valid YAML: wrap it in double quotes and escape inner quotes');
+  }
+  return errors;
+}
 
 export function loadLayout(root = process.cwd()) {
   const layout = JSON.parse(readFileSync(join(root, SCHEMA_DIR, 'layout.json'), 'utf8'));
@@ -136,7 +157,29 @@ export function checkFile(relPath, root = process.cwd(), layout = loadLayout(roo
   const rule = matchRule(layout, relPath);
   if (!rule?.schema) return [];
   const schema = loadSchema(rule.schema, root);
-  return records.flatMap(([at, value]) => validate(schema, value, at, root));
+  return records.flatMap(([at, value]) => {
+    const errors = validate(schema, value, at, root);
+    if (errors.length) return errors;
+    if (rule.schema === 'finding.schema.json') return findingSourceErrors(value, at, root);
+    if (rule.schema === 'calc-result.schema.json') return expertGateErrors(value, at);
+    return [];
+  });
+}
+
+// A finding must point at a catalog entry and repeat its source and state, so neither can be made up.
+function findingSourceErrors(finding, at, root) {
+  const catalog = JSON.parse(readFileSync(join(root, 'catalog/provisions.json'), 'utf8'));
+  const entry = Object.values(catalog).filter(Array.isArray).flat().find(e => e.id === finding.catalog_id);
+  if (!entry) return [`${at}.catalog_id: "${finding.catalog_id}" is not in catalog/provisions.json`];
+  const errors = [];
+  if (finding.source_url !== entry.source_url) errors.push(`${at}.source_url: must match the catalog entry (${entry.source_url})`);
+  if (finding.verification !== entry.verification) errors.push(`${at}.verification: must match the catalog entry (${entry.verification})`);
+  return errors;
+}
+
+function expertGateErrors(result, at) {
+  if (result.validation_status !== 'expert_validated' || (result.validated_by && result.validated_at)) return [];
+  return [`${at}: expert_validated needs validated_by (the expert's name) and validated_at`];
 }
 
 export function packageVersion(root = process.cwd()) {

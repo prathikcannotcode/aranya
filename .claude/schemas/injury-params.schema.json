@@ -14,9 +14,10 @@
     "recovery_years": { "type": "integer", "minimum": 0 },
     "restoration_gain": { "type": "number", "minimum": 0, "maximum": 1 },
     "restoration_years": { "type": "integer", "minimum": 1 },
-    "restoration_lag": { "type": "integer", "minimum": 0 },
-    "discount_rate": { "type": "number", "minimum": 0, "maximum": 1 },
-    "restoration_unit_cost": { "type": "number", "minimum": 0 },
+    "restoration_lag": { "type": "integer", "minimum": 0, "description": "Years from the start of the injury (t = 0) until restoration begins delivering service" },
+    "discount_rate": { "type": "number", "minimum": 0, "maximum": 1, "description": "As a fraction: 0.03 means 3%" },
+    "restoration_unit_cost": { "type": "number", "minimum": 0, "description": "Cost per hectare of restoration" },
+    "currency": { "type": "string", "pattern": "^[A-Z]{3}$", "description": "ISO 4217 code for restoration_unit_cost, e.g. INR" },
     "sensitivity_pct": { "type": "number", "minimum": 0, "maximum": 1 }
   },
   "additionalProperties": false

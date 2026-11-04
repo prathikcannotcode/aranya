@@ -3,16 +3,30 @@
   "title": "REA/HEA calculator result",
   "description": "Expert-witness input material, not a final compensation figure. `methodology_status` can only be `novel_persuasive`: the schema itself forbids presenting equivalency analysis as established Indian law.",
   "type": "object",
-  "required": ["method", "methodology_status", "validation_status", "debit_dsay", "credit_per_ha_dsay", "restoration_area_needed_ha", "scaling_ratio", "inputs", "disclaimer", "generated"],
+  "required": ["method", "methodology_status", "validation_status", "debit_dsay", "credit_per_ha_dsay", "restoration_area_needed_ha", "scaling_ratio", "range", "inputs", "disclaimer", "generated"],
   "properties": {
     "method": { "type": "string", "enum": ["HEA", "REA"] },
     "methodology_status": { "type": "string", "enum": ["novel_persuasive"] },
     "validation_status": { "type": "string", "enum": ["pending_expert_review", "expert_validated"] },
+    "validated_by": { "type": "string", "minLength": 1, "description": "The expert's name. Required with expert_validated; a human records it by hand." },
+    "validated_at": { "type": "string", "format": "date" },
     "debit_dsay": { "type": "number", "minimum": 0 },
     "credit_per_ha_dsay": { "type": "number", "minimum": 0 },
     "restoration_area_needed_ha": { "type": "number", "minimum": 0 },
     "scaling_ratio": { "type": "number", "minimum": 0 },
     "estimated_cost": { "type": "number", "minimum": 0 },
+    "range": {
+      "type": "object",
+      "description": "Lowest and highest result across the sensitivity rows and the stated inputs",
+      "required": ["low_ha", "high_ha"],
+      "properties": {
+        "low_ha": { "type": "number", "minimum": 0 },
+        "high_ha": { "type": "number", "minimum": 0 },
+        "low_cost": { "type": "number", "minimum": 0 },
+        "high_cost": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
     "inputs": { "type": "object", "additionalProperties": true },
     "sensitivity": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
     "disclaimer": { "type": "string", "minLength": 1 },

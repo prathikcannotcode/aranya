@@ -2,3 +2,8 @@ node_modules/
 *.log
 .DS_Store
 Thumbs.db
+.claude/settings.local.json
+# Real matters stay out of git; a `git add .` in a public fork would publish a client's file. Only the synthetic sample is tracked.
+matters/*
+!matters/.gitkeep
+!matters/sample-estuary/

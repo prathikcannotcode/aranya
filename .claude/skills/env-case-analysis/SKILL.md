@@ -1,6 +1,6 @@
 ---
 name: env-case-analysis
-description: Triage an Indian environmental matter: check forum and jurisdiction first, classify the applicable statutes, extract issues and reliefs, and record findings and flagged sections in a matter workspace. Use for "analyse this case", "which forum", "what reliefs", "is this an NGT matter".
+description: "Triage an Indian environmental matter: check forum and jurisdiction first, classify the applicable statutes, extract issues and reliefs, and record findings and flagged sections in a matter workspace. Use for \"analyse this case\", \"which forum\", \"what reliefs\", \"is this an NGT matter\"."
 ---
 
 # Environmental case analysis
@@ -30,6 +30,7 @@ Open and orient a matter. Decide the forum before anything else, map the applica
 
 - Decide forum/jurisdiction before drafting any relief.
 - Every finding cites a provision and repeats its `verification` state; nothing unverified reaches a court-facing output.
+- A finding needs a `catalog_id` from `catalog/provisions.json`. If the provision is not in the catalog, raise a flag naming it and tell the user the catalog needs an entry; do not write a finding on it.
 - No merits prediction; this is tooling, not legal advice.
 
 ## Commands
