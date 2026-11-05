@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0011",
+  "summary": "EIA 1.4 says clearance timelines in the report follow the draft EIA Notification 2020. The draft was never notified and is not law. The 2006 Notification governs.",
+  "instrument": "Environmental Impact Assessment Notification, 2006",
+  "provision": "Notification as a whole; catalog note on the 2020 draft",
+  "severity": "medium",
+  "recommendation": "Note it as an error in the report's legal basis. The extract does not show that any timeline changed as a result, so do not overstate it. Cite only the 2006 Notification.",
+  "source_url": "https://environmentclearance.nic.in/report/EIA_Notifications.aspx",
+  "verification": "source_cited",
+  "flag_id": "FL-0017",
+  "catalog_id": "eia-notif-2006",
+  "record_refs": ["04-eia-report-extract.md 1.4"]
+}

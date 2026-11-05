@@ -1,0 +1,14 @@
+{
+  "finding_id": "F-0018",
+  "summary": "The instruction to say that HEA is well established in NGT practice cannot be carried out. The catalog records no documented NGT or Indian court use; methodology_status is novel_persuasive and the schema permits nothing else. The instruction to give one figure for the prayer cannot be carried out either: the methodology requires a range, no expert has reviewed the inputs, and the record-derived runs span 13.56 to 32.09 ha.",
+  "instrument": "Habitat Equivalency Analysis (HEA), methodology_status novel_persuasive",
+  "provision": "Catalog entry hea, note; docs/METHODOLOGY.md, Legal status in India",
+  "severity": "critical",
+  "recommendation": "Present HEA as persuasive comparative material from US natural resource damage assessment, used to size what s.15 clause (c) already empowers. Plead the restoration order with the scale as a range once an ecologist has validated it, and ask the Tribunal to fix the figure after hearing the expert.",
+  "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7007898/",
+  "verification": "source_cited",
+  "flag_id": "FL-0021",
+  "catalog_id": "hea",
+  "methodology_status": "novel_persuasive",
+  "record_refs": ["01-instructing-note.md, Quantum"]
+}

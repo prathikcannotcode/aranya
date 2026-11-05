@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0010",
+  "summary": "The baseline breaches Terms of Reference Condition 6, which bars data older than three years on the date the final report is submitted. The report went in on 20 October 2023, so nothing before 20 October 2020 qualifies. EIA 3.2 adopts air, surface water, soil and noise data from 1 March to 31 May 2018, generated for an earlier proposal. That data was about five years and four months old at submission, and already out of date when the Terms of Reference issued on 18 April 2022.",
+  "instrument": "Environmental Impact Assessment Notification, 2006",
+  "provision": "para 7 (stage 2, scoping and Terms of Reference)",
+  "severity": "high",
+  "recommendation": "Record as a defect at the scoping stage. Read the SEAC minutes to see whether anyone addressed it. Use it with F-0009 in any EC challenge; in the NGT application it is background only.",
+  "source_url": "https://environmentclearance.nic.in/report/EIA_Notifications.aspx",
+  "verification": "source_cited",
+  "flag_id": "FL-0016",
+  "catalog_id": "eia-2006-process",
+  "record_refs": ["04-eia-report-extract.md, ToR Condition 6 and 3.2"]
+}

@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0004",
+  "summary": "Relief map. Section 15 supports compensation to victims of pollution (clause a), restitution of property (clause b) and restitution of the environment for such area as the Tribunal thinks fit (clause c). Those carry the lost-catch and restoration instructions. Mill closure does not appear in the catalog's s.15 summary and interim directions have no catalog entry, so their source must be confirmed (FL-0005). Quashing the EC is neither a s.14 nor a s.15 relief on this catalog, and EC condition G4 itself routes any challenge to an appeal under s.16 within 30 days (FL-0002).",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "s.15",
+  "severity": "high",
+  "recommendation": "Frame the application around: stop the discharge, remove the bypass, closure until a joint inspection confirms no discharge, restitution under s.15 clause (c), compensation under s.15 clause (a) and s.17. Take the EC out of this application and choose between a writ petition and a revocation request to SEIAA (case-analysis.md).",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2025",
+  "verification": "source_cited",
+  "flag_id": "FL-0005",
+  "catalog_id": "ngt-s15",
+  "record_refs": ["01-instructing-note.md, What the client wants", "02-environmental-clearance.md G4"]
+}

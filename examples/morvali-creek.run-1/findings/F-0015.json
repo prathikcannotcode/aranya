@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0015",
+  "summary": "The Company's compliance report of 28 April 2026, for 1 October 2025 to 31 March 2026, states against S1: 'Complied. No effluent is discharged outside the premises.' SPCB's report RO/SD/26/019 of 3 February 2026, inside that period, records the outfall running. The regulator's inspection contradicts the statement made to SEIAA and the Regional Office.",
+  "instrument": "Environmental Impact Assessment Notification, 2006",
+  "provision": "para 7 (clearance granted with conditions); EC conditions S1 and G2",
+  "severity": "high",
+  "recommendation": "Plead the contradiction: it answers any reliance on the report. Do not extend the charge to the S2, S3 or G1 entries, because the file has nothing against them. Call for the Company's earlier reports, which are not on file.",
+  "source_url": "https://environmentclearance.nic.in/report/EIA_Notifications.aspx",
+  "verification": "source_cited",
+  "flag_id": "FL-0015",
+  "catalog_id": "eia-2006-process",
+  "record_refs": ["07-compliance-report.md", "06-spcb-correspondence.md, 3 February 2026"]
+}

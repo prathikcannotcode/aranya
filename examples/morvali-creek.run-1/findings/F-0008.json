@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0008",
+  "summary": "SPCB found the bypass on 22 October 2024 and directed its removal within 15 days, that is by 6 November 2024. The outfall was running on 3 February 2026 and the line was in use on 16 July 2026. The file shows one show-cause notice, no reply to the Sangh's letter of 6 January 2025, and no closure or prosecution step. The public trust doctrine, under which the State holds rivers and other natural resources as trustee, gives the argument for directions against the Board.",
+  "instrument": "Public trust doctrine; M.C. Mehta v. Kamal Nath, (1997) 1 SCC 388",
+  "provision": "Public trust doctrine",
+  "severity": "medium",
+  "recommendation": "Keep SPCB as a respondent for directions and disclosure: its inspection files, the results of the samples taken on 16 July 2026, and the S2 server data. Section 33A of the Water Act is named in SPCB's report but not catalogued (FL-0006). Confirm the Kamal Nath paragraphs against (1997) 1 SCC 388 before citing a pinpoint.",
+  "source_url": "https://indiankanoon.org/doc/1239689/",
+  "verification": "source_cited",
+  "flag_id": "FL-0006",
+  "catalog_id": "public-trust",
+  "record_refs": ["06-spcb-correspondence.md"]
+}

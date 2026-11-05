@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0009",
+  "summary": "Form 1 answers 'None' for protected areas and for sensitive-species use within 15 km, and EC para 2 repeats that. The Company's own final EIA report records Nilapani Bird Sanctuary, notified in 1987, about 3.2 km north-east of the plant boundary, and waterfowl on Morvali Creek, which Form 1 lists at 0.6 km. SEAC appraised that report on 14 December 2023 and the EC still recites the false answer. Para 7 gives Category A appraisal to the EAC at MoEFCC and Category B to SEIAA, so a wrong category means the wrong decision-maker.",
+  "instrument": "Environmental Impact Assessment Notification, 2006",
+  "provision": "para 7 (screening and appraisal)",
+  "severity": "critical",
+  "recommendation": "Confirm the General Condition in the Schedule (FL-0010): if a protected area within 10 km moves this item to Category A, SEIAA was the wrong authority. Use the Form 1 undertaking to ask SEIAA to revoke (FL-0012). Get the full Form 1, Figure 3.4 and the minutes of SEAC's 71st meeting. In the NGT application use these facts for credibility and precaution, not as a prayer to quash.",
+  "source_url": "https://environmentclearance.nic.in/report/EIA_Notifications.aspx",
+  "verification": "source_cited",
+  "flag_id": "FL-0010",
+  "catalog_id": "eia-2006-process",
+  "record_refs": ["03-form-1-extract.md", "04-eia-report-extract.md 3.7.2", "02-environmental-clearance.md paras 1 to 3"]
+}

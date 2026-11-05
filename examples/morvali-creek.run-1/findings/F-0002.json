@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0002",
+  "summary": "The instruction to lead with ss.29 and 51 of the Wild Life (Protection) Act 1972 cannot be followed in this forum. The 1972 Act is not one of the seven Schedule I enactments, so a head founded on it does not clear the s.14 gate and invites a jurisdiction objection on page one. The file also has no evidence that birds have left: the surveys score benthic diversity, fish density and water quality, and nothing places the 42 ha polygon inside the sanctuary, which EIA 3.7.2 puts about 3.2 km north-east of the plant.",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "Schedule I",
+  "severity": "critical",
+  "recommendation": "Lead with the Water Act discharge and EC condition S1. Keep Nilapani as a fact: it shows the Form 1 answer was false and supports the precautionary case. Plead harm to birds only as a consequence of the Water Act pollution, and only once a bird survey exists. Send any prosecution under the 1972 Act to a criminal complaint and any standalone wildlife relief to a High Court writ. Sections 29 and 51 are not catalogued (FL-0001).",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2025",
+  "verification": "source_cited",
+  "flag_id": "FL-0001",
+  "catalog_id": "ngt-schedule-1",
+  "record_refs": ["01-instructing-note.md, Lead head of claim", "04-eia-report-extract.md 3.7.2", "08-ecology-surveys.md"]
+}

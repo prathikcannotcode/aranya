@@ -1,0 +1,12 @@
+{
+  "finding_id": "F-0006",
+  "summary": "Expect an apportionment defence. The College's November 2023 survey scored Lower Morvali Creek at 0.58 before the mill was commissioned and attributes the shortfall to the Rasulgarh municipal sewage outfall about 4 km upstream and to sand mining. Section 17 lets the Tribunal apportion liability where it cannot be attributed to a single person.",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "s.17",
+  "severity": "high",
+  "recommendation": "Claim against the Company only the drop from 0.58 to 0.15 (F-0016), which answers the defence before it is raised. Plead causation of that drop from the SPCB bypass findings and the fish kill. Decide whether to implead the municipal body; if we do not, expect the Company to try.",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2025",
+  "verification": "source_cited",
+  "catalog_id": "ngt-s17",
+  "record_refs": ["08-ecology-surveys.md, Pre-project survey"]
+}

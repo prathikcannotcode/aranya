@@ -1,0 +1,12 @@
+{
+  "finding_id": "F-0001",
+  "summary": "The forum gate is met for the discharge claim. SPCB's reports of 22 October 2024, 3 February 2026 and 16 July 2026 record effluent reaching Morvali Creek through a bypass line at Survey No. 214. That engages the Water Act 1974 and the EPA 1986 (parent of the EIA Notification 2006), both Schedule I enactments, so a substantial environmental question arises out of their implementation.",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "s.14 read with Schedule I",
+  "severity": "high",
+  "recommendation": "Set the forum to the NGT for the discharge, closure, compensation and restitution claims, and plead the Water Act and the EPA as the enactments the question arises under.",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2025",
+  "verification": "source_cited",
+  "catalog_id": "ngt-s14",
+  "record_refs": ["06-spcb-correspondence.md", "02-environmental-clearance.md S1"]
+}
