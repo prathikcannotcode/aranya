@@ -1,0 +1,16 @@
+{
+  "method": "HEA",
+  "label": "Lower Morvali Creek (synthetic): record-derived alternative A. Baseline 0.58 from the November 2023 survey; lag 6 to first measurable gain; 22 years to the end of design life. Not expert-reviewed.",
+  "injured_area": 42,
+  "baseline_service": 0.58,
+  "injured_service": 0.15,
+  "injury_years": 5,
+  "recovery_years": 12,
+  "restoration_gain": 0.7,
+  "restoration_years": 22,
+  "restoration_lag": 6,
+  "discount_rate": 0.03,
+  "restoration_unit_cost": 800000,
+  "currency": "INR",
+  "sensitivity_pct": 0.2
+}

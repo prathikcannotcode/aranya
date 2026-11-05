@@ -1,0 +1,32 @@
+{
+  "matter_id": "morvali-creek",
+  "title": "Morvali Creek Matsya Sahakari Sangh v. Tarangi Sugars Pvt. Ltd. and others (synthetic)",
+  "forum": "ngt",
+  "description": "Synthetic matter for testing Aranya. Fishers' cooperative (214 members) against a 6,500 TCD sugar mill over effluent discharged to Morvali Creek in breach of a zero-liquid-discharge EC condition. Forum set to the NGT for the discharge, closure, compensation and restitution claims only: the EC challenge and the Wild Life Act heads do not fit in the same original application (see case-analysis.md).",
+  "created": "2026-11-05T14:08:35Z",
+  "law_as_at": "2026-11-03",
+  "parties": {
+    "applicant": "Morvali Creek Matsya Sahakari Sangh, Rasulgarh Taluka, State of Suvarnadesh",
+    "respondents": [
+      "Tarangi Sugars Pvt. Ltd.",
+      "State Environment Impact Assessment Authority, Suvarnadesh",
+      "Suvarnadesh Pollution Control Board"
+    ]
+  },
+  "dates": {
+    "instructing_note": "2026-11-02",
+    "target_filing": "2026-11-20",
+    "form_1_signed": "2022-03-14",
+    "terms_of_reference": "2022-04-18",
+    "public_hearing": "2023-09-02",
+    "final_eia_report": "2023-10-20",
+    "environmental_clearance": "2024-02-12",
+    "ec_uploaded": "2024-02-16",
+    "ec_newspaper_notices": "2024-02-19",
+    "consent_to_operate": "2024-08-28",
+    "commissioning": "2024-09-03",
+    "first_recorded_discharge": "last week of September 2024, per the Sangh's letter of 2024-10-09",
+    "fish_kill": "2026-07-14"
+  },
+  "synthetic": true
+}

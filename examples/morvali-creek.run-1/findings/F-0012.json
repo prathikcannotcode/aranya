@@ -1,0 +1,12 @@
+{
+  "finding_id": "F-0012",
+  "summary": "Impact prediction and mitigation rest on one assumption. EIA 4.3 predicts no impact on the creek because the mill will run on zero liquid discharge, and EMP 7.2 says effluent is treated and reused on site. The extract shows no failure scenario, no aquatic or fisheries baseline for a creek 0.6 km away, and no assessment of the sanctuary that 3.7.2 mentions, although fishers raised effluent risk at the hearing. Only extracts are on file.",
+  "instrument": "Environmental Impact Assessment Notification, 2006",
+  "provision": "para 7 (stage 4, appraisal)",
+  "severity": "high",
+  "recommendation": "Read Chapters 3, 4 and 7 and the monitoring plan in full before asserting that anything is absent. If the full report matches the extract, the point is that appraisal accepted a promise in place of an assessment.",
+  "source_url": "https://environmentclearance.nic.in/report/EIA_Notifications.aspx",
+  "verification": "source_cited",
+  "catalog_id": "eia-2006-process",
+  "record_refs": ["04-eia-report-extract.md 3.7.2, 4.3, 7.2", "05-public-hearing-record.md, Minutes"]
+}

@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0014",
+  "summary": "EC condition S1 (no process effluent, condensate or wash water shall leave the premises at any time) is shown breached on SPCB's own reports: RO/SD/24/212 of 22 October 2024 (bypass from the equalisation tank to the creek at Survey No. 214, discharge running, BOD 1,480 mg/L); RO/SD/26/019 of 3 February 2026 (outfall running, BOD 1,120 mg/L); RO/SD/26/144 of 16 July 2026 (fish kill confirmed, bypass in use). Any discharge breaches S1, so the BOD values are not needed to prove it.",
+  "instrument": "Environmental Impact Assessment Notification, 2006",
+  "provision": "para 7 (clearance granted with conditions); EC No. SEIAA/SD/2024/0117, condition S1",
+  "severity": "critical",
+  "recommendation": "Make this the lead of the application. Get certified copies of the three reports, the s.33A direction and show-cause notice, and the results of the samples taken on 16 July 2026.",
+  "source_url": "https://environmentclearance.nic.in/report/EIA_Notifications.aspx",
+  "verification": "source_cited",
+  "flag_id": "FL-0014",
+  "catalog_id": "eia-2006-process",
+  "record_refs": ["02-environmental-clearance.md S1", "06-spcb-correspondence.md"]
+}
