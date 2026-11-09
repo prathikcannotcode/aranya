@@ -1,5 +1,7 @@
 # Handoff brief: a short note on REA/HEA in environmental adjudication in India
 
+> **Out of date in two places.** This brief treats Schedule II head (g) as the head, and its *Vanashakti* line predates the November 2025 recall. Read the [November 2026 source pack](../catalog/patches/2026-11-source-pack/README.md) and its questions for counsel before using it.
+
 Give this file to Claude (with the repository attached) and ask it to write the note. This is a brief, not the note itself.
 
 ## The task

@@ -55,6 +55,14 @@ HEA equivalency analysis [novel_persuasive, pending_expert_review]
 
 The figures are illustrative and synthetic. The point is the shape: a debit, a restoration scale, a cost, a range, and a status that stays `pending_expert_review` until a named expert validates the inputs.
 
+## How far to trust it
+
+**One scored run.** [Morvali Creek](examples/morvali-creek) is a synthetic matter with 14 planted issues, scored against an answer list committed before the run. The [score](examples/morvali-creek.run-1/SCORE.md): 14 of 14 found, 6 of 6 should-not-flag items left alone, no invented citation. That overstates Aranya: four of the 14 rest on law the catalog doesn't hold, which the run supplied from model memory. The same model wrote the answer list and ran the skills, and no lawyer has reviewed either.
+
+**The catalog has known gaps.** It doesn't yet hold NGT Act s.15(3) or s.16 (the two limitation periods), the EIA 2006 General Condition, para 8(vi) or Appendix IV, or the CPCB compensation method. Its *Vanashakti* note predates the November 2025 recall.
+
+A [source pack](catalog/patches/2026-11-source-pack/README.md) adds 18 entries and corrects 6, each traced to a primary source. It isn't applied yet, because no lawyer has reviewed it; the open points are in [QUESTIONS-FOR-COUNSEL.md](catalog/patches/2026-11-source-pack/QUESTIONS-FOR-COUNSEL.md). Until it lands, treat any point resting on those provisions as unverified. Whether Schedule II head (g) or head (k) carries a restoration-scaled claim is the first of those questions.
+
 ## Why Aranya
 
 | | Ad hoc quantum | Consultant's damage report | **Aranya** |
