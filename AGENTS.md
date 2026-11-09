@@ -37,7 +37,7 @@ Read each catalog entry's `note` as well as its `verification` state: several li
 
 ## Disclaimer
 
-Aranya provides tooling and informational structure. It is not legal advice. For binding decisions, instruct qualified environmental counsel and, for damage quantum, a qualified ecological expert.
+AI can make mistakes. Aranya is tooling, not legal advice. Have a licensed attorney check everything before you rely on it, and a qualified ecological expert check any damage figure.
 
 ## Contributing
 
