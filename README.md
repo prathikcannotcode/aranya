@@ -34,6 +34,10 @@ Resource and Habitat Equivalency Analysis (REA/HEA) is the restoration-scaling m
 
 It will not tell you the Tribunal will accept it. It tells you exactly which section, judgment and assumption each step rests on, so a lawyer and an ecologist can check it.
 
+## Where Aranya comes from
+
+Aranya grew out of my work on *[Evolution of Environmental Jurisprudence in India: The National Green Tribunal](https://www.amazon.in/dp/B0DY1XC41H)* by Raghuveer Nath and Armin Rosencranz (Cambridge University Press, 2025). The book follows Indian environmental adjudication from the public interest litigation of the 1980s to the NGT, and it is where we discussed REA and HEA as a way to size environmental compensation. Equivalency analysis usually means hiring a consultant with a proprietary model, which puts it out of reach for many of the people who bring cases to the Tribunal: community groups, small NGOs, students, and lawyers with no budget for an expert. I built Aranya to make that calculation accessible. The calculator is free, it runs on your own machine without a model or a network connection, and every step from the injury to the restoration figure is open for anyone to read, re-run and challenge.
+
 ## What a matter looks like
 
 The repo ships with **sample-estuary**, a synthetic matter (a tannery cluster's effluent degrading a 25 ha estuarine wetland), so you can see the format before pointing Aranya at anything of yours. The calculator run is real output you can reproduce; the matter, flags and finding were written by hand:
