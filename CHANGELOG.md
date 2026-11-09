@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2 (2026-11-09)
+
+- The README says where Aranya comes from: the book *Evolution of Environmental Jurisprudence in India: The National Green Tribunal* (Cambridge University Press, 2025), and the aim of making REA/HEA compensation analysis free and open to anyone.
+
 ## 0.3.1 (2026-11-09)
 
 - The catalog disclaimer and AGENTS.md now say it plainly: AI can make mistakes, and a licensed attorney should check everything before you rely on it. Entries marked `verify` or `unverified` still stay out of court-facing documents until they are checked against the primary source.
