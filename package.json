@@ -1,6 +1,6 @@
 {
   "name": "aranya",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "description": "Open-source Indian environmental-law workspace agent: case analysis, EIA review and restoration-scaled damage (REA/HEA) arguments as Claude Code skills",
   "license": "Apache-2.0",
