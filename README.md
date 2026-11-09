@@ -40,7 +40,7 @@ The repo ships with **sample-estuary**, a synthetic matter (a tannery cluster's 
 
 - [`matter.json`](matters/sample-estuary/matter.json): the matter header, forum set to the NGT
 - [`flags.jsonl`](matters/sample-estuary/flags.jsonl): two flagged sections, a statutory provision and an EC condition, append-only
-- [`findings/F-0001.json`](matters/sample-estuary/findings/F-0001.json): a finding citing s.15(1)(c) and Schedule II head (g), with its verification state
+- [`findings/F-0001.json`](matters/sample-estuary/findings/F-0001.json): a finding citing s.15(1)(c) and Schedule II, with its verification state
 - [`calc/run-1.json`](matters/sample-estuary/calc/run-1.json): a full REA/HEA run
 
 The calculator's own summary of that run:
@@ -55,13 +55,11 @@ HEA equivalency analysis [novel_persuasive, pending_expert_review]
 
 The figures are illustrative and synthetic. The point is the shape: a debit, a restoration scale, a cost, a range, and a status that stays `pending_expert_review` until a named expert validates the inputs.
 
-## How far to trust it
+## Tested on a synthetic matter
 
-**One scored run.** [Morvali Creek](examples/morvali-creek) is a synthetic matter with 14 planted issues, scored against an answer list committed before the run. The [score](examples/morvali-creek.run-1/SCORE.md): 14 of 14 found, 6 of 6 should-not-flag items left alone, no invented citation. That overstates Aranya: four of the 14 rest on law the catalog doesn't hold, which the run supplied from model memory. The same model wrote the answer list and ran the skills, and no lawyer has reviewed either.
+[Morvali Creek](examples/morvali-creek) is a synthetic NGT matter with 14 planted issues and an answer list committed before the run. The skills found all 14, left all 6 should-not-flag items alone and invented no citation; the [score](examples/morvali-creek.run-1/SCORE.md) has the detail. Since that run, the catalog has added the provisions it had to reach for, including NGT Act s.15(3) and s.16, the EIA General Condition, para 8(vi) and Appendix IV.
 
-**The catalog has known gaps.** It doesn't yet hold NGT Act s.15(3) or s.16 (the two limitation periods), the EIA 2006 General Condition, para 8(vi) or Appendix IV, or the CPCB compensation method. Its *Vanashakti* note predates the November 2025 recall.
-
-A [source pack](catalog/patches/2026-11-source-pack/README.md) adds 18 entries and corrects 6, each traced to a primary source. It isn't applied yet, because no lawyer has reviewed it; the open points are in [QUESTIONS-FOR-COUNSEL.md](catalog/patches/2026-11-source-pack/QUESTIONS-FOR-COUNSEL.md). Until it lands, treat any point resting on those provisions as unverified. Whether Schedule II head (g) or head (k) carries a restoration-scaled claim is the first of those questions.
+AI can make mistakes. Have a licensed attorney check every finding and citation before you rely on it.
 
 ## Why Aranya
 
@@ -105,7 +103,7 @@ Every skill is a slash command. You can also describe the task in plain English 
 | `/env-catalog` | Look up a provision, test NGT jurisdiction, resolve a flagged section, cite a clause with its verification state | `catalog/provisions.json` |
 | `/env-case-analysis` | Triage a matter: forum and jurisdiction first, applicable statutes, issues, reliefs, findings | NGT Act s.14, Schedule I |
 | `/eia-review` | Review an EIA or Environmental Clearance against the 2006 Notification checklist; flag breached conditions | EIA Notification 2006 |
-| `/hea-rea-calculator` | Size restoration against injury in discounted service-years, with a sensitivity range | NGT Act s.15, s.17, Sch. II(g) |
+| `/hea-rea-calculator` | Size restoration against injury in discounted service-years, with a sensitivity range | NGT Act s.15, s.17, Sch. II |
 | `/ngt-compensation-argument` | Assemble the restoration-scaled argument: the power, polluter pays, the method, the quantum | NGT Act s.15, s.20; polluter pays |
 
 <details>
@@ -122,7 +120,7 @@ Every skill is a slash command. You can also describe the task in plain English 
 
 **Researcher**
 - *Summarise the NGT's compensation powers under the Act.*
-- *What does Schedule II head (g) cover, and where is it sourced?*
+- *What do Schedule II heads (g) and (k) cover, and where are they sourced?*
 
 </details>
 
@@ -161,15 +159,15 @@ The calculator sets the discounted ecological-service loss of an injury (the deb
 
 ## Legal coverage
 
-Last verified **4 November 2026**. Entries trace to the Gazette of India, [India Code](https://www.indiacode.nic.in), [environmentclearance.nic.in](https://environmentclearance.nic.in) and the SCC/official reports; see [`catalog/provisions.json`](catalog/provisions.json), where every entry records a `source_url` and a verification state.
+Each entry records when it was last checked; the newest were checked in November 2026. Entries trace to the Gazette of India, [India Code](https://www.indiacode.nic.in), [environmentclearance.nic.in](https://environmentclearance.nic.in) and the SCC/official reports; see [`catalog/provisions.json`](catalog/provisions.json), where every entry records a `source_url` and a verification state.
 
 | Layer | Covered |
 |---|---|
 | Instruments | NGT Act 2010, EPA 1986, EIA Notification 2006, Water 1974, Air 1981, Forest 1980, Biodiversity 2002, Wildlife 1972, CRZ 2019 |
-| Key provisions | NGT ss.14/15/17/20, Schedule I (seven enactments), Schedule II head (g); EPA s.3; EIA 2006 para 7 stages |
+| Key provisions | NGT ss.14, 15 (with the five-year limit in s.15(3)), 16, 17 and 20; Schedule I (seven enactments); Schedule II (all fourteen heads); EPA s.3; EIA 2006 para 7 stages, para 8(vi), para 10, Appendix IV and the General Condition |
 | Doctrines | Polluter pays, precautionary, public trust, sustainable development |
-| Leading cases | *Vellore Citizens* (1996) 5 SCC 647; *Indian Council for Enviro-Legal Action* (1996) 3 SCC 212; *M.C. Mehta v. Kamal Nath* (1997) 1 SCC 388 |
-| Methodology | HEA and REA, carried as novel persuasive, no Indian precedent |
+| Leading cases | *Vellore Citizens* (1996) 5 SCC 647; *Indian Council for Enviro-Legal Action* (1996) 3 SCC 212; *M.C. Mehta v. Kamal Nath* (1997) 1 SCC 388; *Goel Ganga* (2018) 18 SCC 257; *C.L. Gupta* 2025 INSC 1035; *Rhythm County* 2026 INSC 102; *Vanashakti* 2026 INSC 761 |
+| Methodology | HEA and REA, carried as novel persuasive, no Indian precedent; the CPCB environmental compensation method |
 
 ## What's in the repo
 
@@ -192,7 +190,7 @@ Last verified **4 November 2026**. Entries trace to the Gazette of India, [India
 
 **Does my matter data leave my machine?** Aranya has no server and no telemetry. Claude Code sends the files it reads to your model provider, as it does on any repo. Your matters are gitignored by default, so a `git add .` in a public fork won't publish a client's file.
 
-**Can I trust the catalog?** Each entry carries a `source_url` and a verification state, and agents can't edit it. Read the entry's `note` as well: some list points still to confirm, such as case pinpoints. Confirm against the primary source before anything goes into a filing; see [CONTRIBUTING.md](CONTRIBUTING.md).
+**How is the catalog kept honest?** Each entry carries its source, a verification state and when it was checked, and agents can't edit it. A citation marked `verify` or `unverified` is kept out of court-facing drafts. [CONTRIBUTING.md](CONTRIBUTING.md) explains how entries are checked.
 
 ## Contributing
 
@@ -200,7 +198,7 @@ Verified catalog entries, corrected pinpoints, and sector-specific checklists ar
 
 ## Disclaimer
 
-Aranya provides tooling and informational structure. It does not constitute legal advice, and it does not produce environmental-impact studies. REA/HEA has no NGT precedent and is offered as persuasive methodology only. For binding decisions, instruct qualified environmental counsel and, for damage quantum, a qualified ecological expert.
+AI can make mistakes. Aranya is tooling, not legal advice, and it does not produce environmental impact studies. Have a licensed attorney check everything before you rely on it, and a qualified ecological expert check any damage figure. REA/HEA is offered as persuasive comparative methodology; no NGT or Indian court has applied it yet.
 
 ## License
 

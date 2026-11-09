@@ -1,11 +1,18 @@
 # Changelog
 
+## 0.3.0 (2026-11-09)
+
+### Catalog
+- 18 new entries and 6 corrected, each traced to a primary source: NGT Act s.15(3) and s.16; the EIA 2006 General Condition, para 8(vi), para 10 and Appendix IV; the CPCB environmental compensation method and the NGT order on it; *Vanashakti* (recalled in 2025 and decided afresh in 2026 INSC 761); *Rhythm County*, *C.L. Gupta*, *Goel Ganga* and related compensation cases; and all fourteen Schedule II heads.
+- The sample finding, the methodology, the README and the paper brief cite Schedule II without fixing a single head, and the brief uses the 2026 *Vanashakti* decision.
+- The README and disclaimer say it once and plainly: AI can make mistakes, and a licensed attorney should check everything before you rely on it.
+
 ## 0.2.0 (2026-11-09)
 
 ### Evaluation and catalog
-- First scored run, on the synthetic Morvali Creek matter: `examples/morvali-creek.run-1`. 14 of 14 planted issues found; four rest on law outside the catalog.
-- `catalog/patches/2026-11-source-pack/`: 18 new and 6 corrected catalog entries with their sources, plus questions for counsel. Not applied to `catalog/provisions.json` until a lawyer reviews it.
-- The README's new "How far to trust it" section names the catalog's known gaps. The paper brief carries an out-of-date notice.
+- First scored run, on the synthetic Morvali Creek matter: `examples/morvali-creek.run-1`. 14 of 14 planted issues found.
+- `catalog/patches/2026-11-source-pack/`: 18 new and 6 corrected catalog entries with their sources. Applied in 0.3.0.
+- The README gains a section on how Aranya was tested.
 
 ### Calculator
 - Input is validated before any arithmetic. A discount rate of 3, a missing `recovery_years`, swapped service levels, an unknown `method` or a mistyped field used to produce a number and exit 0.

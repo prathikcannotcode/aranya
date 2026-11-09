@@ -1,7 +1,5 @@
 # Handoff brief: a short note on REA/HEA in environmental adjudication in India
 
-> **Out of date in two places.** This brief treats Schedule II head (g) as the head, and its *Vanashakti* line predates the November 2025 recall. Read the [November 2026 source pack](../catalog/patches/2026-11-source-pack/README.md) and its questions for counsel before using it.
-
 Give this file to Claude (with the repository attached) and ask it to write the note. This is a brief, not the note itself.
 
 ## The task
@@ -21,9 +19,10 @@ Indian environmental adjudication already holds the statutory power to order res
 
 - **s.15(1)(c)** NGT Act 2010: the Tribunal may order "restitution of the environment for such area or areas, as the Tribunal may think fit." This is the restoration hook.
 - **s.17**: liability to pay relief or compensation under the Schedule II heads for harm from a Schedule I enactment; the Tribunal may apportion.
-- **Schedule II head (g)**: "compensation for environmental degradation and restoration of the quality of the environment" — the express head a restoration-scaled figure sits under.
+- **Schedule II heads (g) and (k)**: (g) covers Government expenses "including compensation for environmental degradation and restoration of the quality of environment"; (k) covers "claims including cost of restoration on account of any harm or damage to environment". The note should say which head, or both, a restoration-scaled figure belongs under, and why.
 - **s.20**: the Tribunal shall apply sustainable development, the precautionary principle and the polluter pays principle.
 - **s.14**: jurisdiction over a substantial environmental question arising from a Schedule I enactment; six-month limitation (plus up to 60 days). Note the Wild Life (Protection) Act 1972 is not in Schedule I.
+- **s.15(3)**: an application for compensation or restitution has five years from when the cause first arose (plus up to 60 days).
 
 Source: India Code handle 123456789/2025. Schedule I is the seven Acts, including the Public Liability Insurance Act 1991.
 
@@ -41,10 +40,10 @@ Source: India Code handle 123456789/2025. Schedule I is the seven Acts, includin
 
 ## Suggested structure
 
-1. The gap: the NGT awards environmental compensation, but quantum reasoning is often ad hoc. Give one or two verifiable examples if you can find them; do not invent orders.
-2. The power already exists: s.15(1)(c), s.17, Schedule II head (g), s.20, and polluter pays.
+1. The gap: the CPCB formula prices consent and direction breaches, while actual damage goes to an expert, site-specific assessment with no standard method (catalog `cpcb-ec-2019`, `rhythm-county-2026`). Give one or two verifiable examples; do not invent orders.
+2. The power already exists: s.15(1)(c), s.17, Schedule II heads (g) and (k), s.20, and polluter pays.
 3. What REA/HEA is, in plain terms, and why a transparent, auditable method suits an adversarial forum.
-4. The mapping onto Indian law: restoration-scaling as restitution of the environment; discounting and service metrics as the quantum method; where the tool's debit/credit sits under head (g).
+4. The mapping onto Indian law: restoration-scaling as restitution of the environment; discounting and service metrics as the quantum method; where the tool's debit/credit sits under Schedule II.
 5. The honest limits: no Indian precedent; US-origin assumptions need translation; the service-loss fraction is contested expert judgment; data scarcity; the method sizes restoration, not a windfall.
 6. A modest proposal: use it as persuasive expert evidence, with the sensitivity range and an ecologist's validation, not as a black-box number.
 
@@ -53,7 +52,7 @@ Source: India Code handle 123456789/2025. Schedule I is the seven Acts, includin
 - No documented NGT or Indian court has applied REA/HEA. Present it as persuasive comparative methodology, never as settled law.
 - Foreign origin: frame through the persuasive-authority rules, and name the statutory and ecological differences that limit transplantation.
 - The figures depend on expert inputs; always a range, expert-validated. The tool's output is expert-witness input material, not the compensation figure.
-- Currency to confirm before publishing: *Vanashakti v. Union of India* (2025), reported to restrict post-facto environmental clearances; the Forest (Conservation) 2023 rename; and every case pinpoint against the SCC report.
+- Currency: cite *Vanashakti* 2026 INSC 761 (29 July 2026), not the 2025 judgment, which was recalled on review (2025 INSC 1326). Also reflect the Forest (Conservation) 2023 rename, and give every case pinpoint from the SCC report.
 
 ## Do and don't
 

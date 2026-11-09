@@ -52,7 +52,7 @@ This is asserted exactly in `.claude/scripts/tests/hea-rea.test.mjs`.
 
 ## Legal status in India
 
-REA/HEA has **no documented NGT or Indian precedent**. It is offered as persuasive comparative methodology to quantify the restoration the NGT may already order under NGT Act s.15(1)(c) (restitution of the environment), s.17, and Schedule II head (g) (restoration of the quality of the environment), applying the polluter pays principle (s.20). Every result is `methodology_status: novel_persuasive` and `validation_status: pending_expert_review` until a named ecological expert validates the inputs. The output is expert-witness input material, never a final compensation figure, and never legal advice.
+REA/HEA has **no documented NGT or Indian precedent**. It is offered as persuasive comparative methodology to quantify the restoration the NGT may already order under NGT Act s.15(1)(c) (restitution of the environment), s.17, and Schedule II, whose heads (g) and (k) both cover restoration, applying the polluter pays principle (s.20). Every result is `methodology_status: novel_persuasive` and `validation_status: pending_expert_review` until a named ecological expert validates the inputs. The output is expert-witness input material, never a final compensation figure, and never legal advice.
 
 ## Provenance
 
