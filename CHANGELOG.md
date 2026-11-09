@@ -1,6 +1,11 @@
 # Changelog
 
-## Unreleased
+## 0.2.0 (2026-11-09)
+
+### Evaluation and catalog
+- First scored run, on the synthetic Morvali Creek matter: `examples/morvali-creek.run-1`. 14 of 14 planted issues found; four rest on law outside the catalog.
+- `catalog/patches/2026-11-source-pack/`: 18 new and 6 corrected catalog entries with their sources, plus questions for counsel. Not applied to `catalog/provisions.json` until a lawyer reviews it.
+- The README's new "How far to trust it" section names the catalog's known gaps. The paper brief carries an out-of-date notice.
 
 ### Calculator
 - Input is validated before any arithmetic. A discount rate of 3, a missing `recovery_years`, swapped service levels, an unknown `method` or a mistyped field used to produce a number and exit 0.
