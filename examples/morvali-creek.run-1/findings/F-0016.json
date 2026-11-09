@@ -1,0 +1,14 @@
+{
+  "finding_id": "F-0016",
+  "summary": "run-1 uses baseline_service 1.0, the reference reach. The same College that supplied the 0.15 injured score put Lower Morvali Creek at 0.58 in November 2023, before the mill was commissioned, and attributes the shortfall to municipal sewage and sand mining. A baseline of 1.0 charges the Company for about half a loss the file says others caused: loss fraction 0.85 against 0.43, debit 322.36 against 163.08 discounted service-hectare-years. The loss-fraction row in run-1 stops at 0.68, so its range does not reach this case.",
+  "instrument": "Habitat Equivalency Analysis (HEA), methodology_status novel_persuasive",
+  "provision": "HEA debit: baseline service (catalog entry hea; docs/METHODOLOGY.md)",
+  "severity": "critical",
+  "recommendation": "Do not file run-1. Ask the ecologist to set the baseline from the November 2023 survey, confirm that its survey reach matches the August 2026 polygon, and confirm the Kalmi reference reach was not affected by the kills recorded at Kalmi ghat. run-2 and run-3 show the effect. All runs stay pending_expert_review.",
+  "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7007898/",
+  "verification": "source_cited",
+  "flag_id": "FL-0019",
+  "catalog_id": "hea",
+  "methodology_status": "novel_persuasive",
+  "record_refs": ["injury-params.json", "08-ecology-surveys.md", "09-restoration-proposal.md, Notes", "calc/run-1.json", "calc/run-2.json"]
+}

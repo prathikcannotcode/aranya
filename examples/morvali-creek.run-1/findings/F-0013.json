@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0013",
+  "summary": "The public consultation looks defective. Terms of Reference Condition 7 required a hearing under Appendix IV. SPCB advertised once, on 21 August 2023, in one English newspaper, 12 days before the hearing of 2 September 2023. The notice names only the SPCB Regional Office as the place to see the draft report. The minutes record that no local-language summary had been prepared when the Sangh's secretary asked for one. Against that, 41 people attended including the secretary, the ADM presided, and the minutes were read over in the local language and signed.",
+  "instrument": "Environmental Impact Assessment Notification, 2006",
+  "provision": "para 7 (stage 3, public consultation); Terms of Reference Condition 7",
+  "severity": "high",
+  "recommendation": "Confirm the Appendix IV requirements (FL-0013). Expect a no-prejudice answer because the Sangh attended. Use the defects in any EC challenge. In the NGT application use the recorded objection and the Company's zero-discharge reply to show the risk was raised and the promise was made.",
+  "source_url": "https://environmentclearance.nic.in/report/EIA_Notifications.aspx",
+  "verification": "source_cited",
+  "flag_id": "FL-0013",
+  "catalog_id": "eia-2006-process",
+  "record_refs": ["05-public-hearing-record.md", "04-eia-report-extract.md, ToR Condition 7"]
+}

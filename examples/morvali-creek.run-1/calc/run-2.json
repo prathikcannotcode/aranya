@@ -1,0 +1,162 @@
+{
+  "method": "HEA",
+  "methodology_status": "novel_persuasive",
+  "validation_status": "pending_expert_review",
+  "debit_dsay": 163.075593,
+  "credit_per_ha_dsay": 9.623127,
+  "restoration_area_needed_ha": 16.946216,
+  "scaling_ratio": 0.403481,
+  "estimated_cost": 13556972.8,
+  "range": {
+    "low_ha": 13.556973,
+    "high_ha": 21.182771,
+    "low_cost": 10845578.4,
+    "high_cost": 16946216.8
+  },
+  "inputs": {
+    "method": "HEA",
+    "label": "Lower Morvali Creek (synthetic): record-derived alternative A. Baseline 0.58 from the November 2023 survey; lag 6 to first measurable gain; 22 years to the end of design life. Not expert-reviewed.",
+    "injured_area": 42,
+    "baseline_service": 0.58,
+    "injured_service": 0.15,
+    "injury_years": 5,
+    "recovery_years": 12,
+    "restoration_gain": 0.7,
+    "restoration_years": 22,
+    "restoration_lag": 6,
+    "discount_rate": 0.03,
+    "restoration_unit_cost": 800000,
+    "currency": "INR",
+    "sensitivity_pct": 0.2
+  },
+  "sensitivity": [
+    {
+      "vary": "loss_fraction",
+      "value": 0.344,
+      "debit_dsay": 130.460474,
+      "credit_per_ha_dsay": 9.623127,
+      "restoration_area_needed_ha": 13.556973,
+      "scaling_ratio": 0.322785,
+      "estimated_cost": 10845578.4
+    },
+    {
+      "vary": "loss_fraction",
+      "value": 0.516,
+      "debit_dsay": 195.690711,
+      "credit_per_ha_dsay": 9.623127,
+      "restoration_area_needed_ha": 20.33546,
+      "scaling_ratio": 0.484178,
+      "estimated_cost": 16268368
+    },
+    {
+      "vary": "discount_rate",
+      "value": 0.024,
+      "debit_dsay": 167.845798,
+      "credit_per_ha_dsay": 10.531165,
+      "restoration_area_needed_ha": 15.938008,
+      "scaling_ratio": 0.379476,
+      "estimated_cost": 12750406.4
+    },
+    {
+      "vary": "discount_rate",
+      "value": 0.036,
+      "debit_dsay": 158.541888,
+      "credit_per_ha_dsay": 8.809729,
+      "restoration_area_needed_ha": 17.996228,
+      "scaling_ratio": 0.428482,
+      "estimated_cost": 14396982.4
+    },
+    {
+      "vary": "restoration_gain",
+      "value": 0.56,
+      "debit_dsay": 163.075593,
+      "credit_per_ha_dsay": 7.698502,
+      "restoration_area_needed_ha": 21.182771,
+      "scaling_ratio": 0.504352,
+      "estimated_cost": 16946216.8
+    },
+    {
+      "vary": "restoration_gain",
+      "value": 0.84,
+      "debit_dsay": 163.075593,
+      "credit_per_ha_dsay": 11.547752,
+      "restoration_area_needed_ha": 14.121847,
+      "scaling_ratio": 0.336234,
+      "estimated_cost": 11297477.6
+    },
+    {
+      "vary": "restoration_years",
+      "value": 18,
+      "debit_dsay": 163.075593,
+      "credit_per_ha_dsay": 8.304731,
+      "restoration_area_needed_ha": 19.636469,
+      "scaling_ratio": 0.467535,
+      "estimated_cost": 15709175.2
+    },
+    {
+      "vary": "restoration_years",
+      "value": 26,
+      "debit_dsay": 163.075593,
+      "credit_per_ha_dsay": 10.794505,
+      "restoration_area_needed_ha": 15.107279,
+      "scaling_ratio": 0.359697,
+      "estimated_cost": 12085823.2
+    },
+    {
+      "vary": "recovery_years",
+      "value": 10,
+      "debit_dsay": 150.118092,
+      "credit_per_ha_dsay": 9.623127,
+      "restoration_area_needed_ha": 15.599721,
+      "scaling_ratio": 0.371422,
+      "estimated_cost": 12479776.8
+    },
+    {
+      "vary": "recovery_years",
+      "value": 14,
+      "debit_dsay": 175.547194,
+      "credit_per_ha_dsay": 9.623127,
+      "restoration_area_needed_ha": 18.242219,
+      "scaling_ratio": 0.434339,
+      "estimated_cost": 14593775.2
+    },
+    {
+      "vary": "injury_years",
+      "value": 4,
+      "debit_dsay": 149.366061,
+      "credit_per_ha_dsay": 9.623127,
+      "restoration_area_needed_ha": 15.521572,
+      "scaling_ratio": 0.369561,
+      "estimated_cost": 12417257.6
+    },
+    {
+      "vary": "injury_years",
+      "value": 6,
+      "debit_dsay": 176.385818,
+      "credit_per_ha_dsay": 9.623127,
+      "restoration_area_needed_ha": 18.329366,
+      "scaling_ratio": 0.436413,
+      "estimated_cost": 14663492.8
+    },
+    {
+      "vary": "restoration_lag",
+      "value": 5,
+      "debit_dsay": 163.075593,
+      "credit_per_ha_dsay": 9.911821,
+      "restoration_area_needed_ha": 16.452637,
+      "scaling_ratio": 0.391729,
+      "estimated_cost": 13162109.6
+    },
+    {
+      "vary": "restoration_lag",
+      "value": 7,
+      "debit_dsay": 163.075593,
+      "credit_per_ha_dsay": 9.342842,
+      "restoration_area_needed_ha": 17.454603,
+      "scaling_ratio": 0.415586,
+      "estimated_cost": 13963682.4
+    }
+  ],
+  "disclaimer": "Expert-witness input material, not a final compensation figure. REA/HEA is a persuasive comparative methodology with no documented NGT precedent; a qualified ecological expert must validate every assumption before filing.",
+  "generated": "2026-11-05T14:11:40.800Z"
+}

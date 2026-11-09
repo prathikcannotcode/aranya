@@ -1,0 +1,16 @@
+{
+  "method": "HEA",
+  "label": "Lower Morvali Creek (synthetic): consultant's inputs",
+  "injured_area": 42,
+  "baseline_service": 1.0,
+  "injured_service": 0.15,
+  "injury_years": 5,
+  "recovery_years": 12,
+  "restoration_gain": 0.7,
+  "restoration_years": 25,
+  "restoration_lag": 0,
+  "discount_rate": 0.03,
+  "restoration_unit_cost": 800000,
+  "currency": "INR",
+  "sensitivity_pct": 0.2
+}

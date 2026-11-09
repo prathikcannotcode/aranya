@@ -1,0 +1,11 @@
+{
+  "finding_id": "F-0007",
+  "summary": "Section 20 obliges the Tribunal to apply the polluter pays principle, under which the polluter bears both compensation to victims and restoration of the degraded environment. The catalog gives Vellore Citizens (1996) 5 SCC 647 and Indian Council for Enviro-Legal Action (1996) 3 SCC 212 as the leading authorities. The catalog note leaves their pinpoints unconfirmed.",
+  "instrument": "National Green Tribunal Act, 2010 s.20; polluter pays doctrine",
+  "provision": "s.20; polluter pays",
+  "severity": "medium",
+  "recommendation": "Use polluter pays as the governing principle for restoration at the Company's cost. Cite both cases without paragraph pinpoints until a named human has confirmed the paragraphs in the SCC reports.",
+  "source_url": "https://indiankanoon.org/doc/1934103/",
+  "verification": "source_cited",
+  "catalog_id": "polluter-pays"
+}

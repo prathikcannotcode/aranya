@@ -1,0 +1,14 @@
+{
+  "finding_id": "F-0017",
+  "summary": "restoration_lag 0 contradicts the consultant's own proposal: works no earlier than mid-2027, first measurable gain in the fourth year after that, 0.7 only by year 10. Time zero is the start of injury, late September 2024, so first gain falls about 6 years in and full gain about 12. The calculator holds gain constant and cannot model a ramp, so run-2 (lag 6, 22 years) and run-3 (lag 12, 16 years) bracket it; credit per hectare falls from 12.55 to 9.62 and 6.35. Other inputs are also unsettled: injury_years 5 assumes discharge to late 2029, against the closure prayer; recovery_years 12 is 'our judgement'; gain 0.7 sits above the creek's pre-project 0.58 and Site R has no starting score; the 3% discount rate is a US convention; 0.15 is a single August 2026 reading applied back to 2024.",
+  "instrument": "Habitat Equivalency Analysis (HEA), methodology_status novel_persuasive",
+  "provision": "HEA credit and timing inputs (catalog entry hea; docs/METHODOLOGY.md)",
+  "severity": "high",
+  "recommendation": "An ecologist of record must set each input. Ask for a restoration trajectory with its start score and a reasoned discount rate. Treat run-2 and run-3 as a bracket for that work, not as a replacement for it.",
+  "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7007898/",
+  "verification": "source_cited",
+  "flag_id": "FL-0020",
+  "catalog_id": "hea",
+  "methodology_status": "novel_persuasive",
+  "record_refs": ["injury-params.json", "09-restoration-proposal.md", "calc/run-1.json", "calc/run-2.json", "calc/run-3.json"]
+}

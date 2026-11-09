@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0005",
+  "summary": "Lost catch has no evidence and no clear head yet. The file holds no catch records or earnings data for the 214 members; the only quantity is about three tonnes of fish dead on 14 July 2026. The HEA worksheet does not measure catch, and the consultant says lost catch is a separate head. On the catalog summary, Schedule II lists loss of wages, damage to private property and harm to fauna, and the full text must be read to see whether a fisher's lost catch fits. Head (g), where the catalog places a restoration figure, is worded around expenses incurred by the Government, an awkward fit for a private applicant.",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "Schedule II; s.15 clause (a)",
+  "severity": "high",
+  "recommendation": "Plead lost catch as a separate money claim under s.15 clause (a) and s.17, backed by member-level catch and sale records, and keep it out of the HEA figure so it cannot be attacked as double counting. Put the restoration claim on s.15 clause (c) first and head (g) in the alternative. Read the full Schedule II text (FL-0008).",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2025",
+  "verification": "source_cited",
+  "flag_id": "FL-0008",
+  "catalog_id": "ngt-schedule-2",
+  "record_refs": ["09-restoration-proposal.md, Notes", "06-spcb-correspondence.md, 14 July 2026"]
+}

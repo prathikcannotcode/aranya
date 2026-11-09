@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0003",
+  "summary": "The view that the application is in time because the fish kill of 14 July 2026 is the cause of action is unsafe. Section 14 runs six months from the date the cause of action first arose, plus up to sixty days. The Sangh's own letter of 9 October 2024 records discharge from the last week of September 2024 and dead fish on 2 and 6 October 2024, and SPCB found the bypass on 22 October 2024. Counted from there, the period ended between 29 May and 8 June 2025. Only if the fish kill is a separate cause of action does it run to 14 January 2027, or 15 March 2027 with sixty days.",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "s.14 (six months from the date the cause of action first arose, plus up to sixty days)",
+  "severity": "critical",
+  "recommendation": "File by 20 November 2026 as planned. Plead the fish kill as a distinct cause of action, set out the 2024 to 2026 history openly because the SPCB file discloses it anyway, and do not assert limitation as a clear point. Rest nothing on Bhavani Sugars (FL-0004). Carry compensation and restitution on the separate s.15 clock once confirmed (FL-0003). Find and catalog authority on continuing discharge before arguing it.",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2025",
+  "verification": "source_cited",
+  "flag_id": "FL-0004",
+  "catalog_id": "ngt-s14",
+  "record_refs": ["01-instructing-note.md, Limitation", "06-spcb-correspondence.md, 9 October 2024 and 22 October 2024"]
+}
