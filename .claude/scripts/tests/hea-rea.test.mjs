@@ -136,11 +136,27 @@ test('CLI reports bad input plainly and exits 1', () => {
   }
 });
 
-test('CLI creates the output folder', () => {
-  const r = cli(worked, '--out', '<dir>/matters/new-matter/calc/run-1.json');
-  assert.equal(r.status, 0, r.stderr);
-  assert.ok(existsSync(join(r.dir, 'matters/new-matter/calc/run-1.json')));
-  rmSync(r.dir, { recursive: true });
+test('CLI writes only a new calc file inside the workspace', () => {
+  const matter = join(repo, `matters/zz-test-${process.pid}`); // gitignored
+  const out = join(matter, 'calc/run-1.json');
+  try {
+    const first = cli(worked, '--out', out);
+    assert.equal(first.status, 0, first.stderr);
+    assert.ok(existsSync(out), 'creates the output folder');
+    const again = cli(worked, '--out', out);
+    assert.equal(again.status, 1);
+    assert.match(again.stderr, /already exists/);
+    for (const dir of [first.dir, again.dir]) rmSync(dir, { recursive: true });
+
+    for (const bad of ['<dir>/matters/m/calc/run-1.json', join(repo, 'catalog/provisions.json'), join(matter, 'flags.jsonl'), join(repo, '.claude/settings.json')]) {
+      const r = cli(worked, '--out', bad);
+      assert.equal(r.status, 1, bad);
+      assert.match(r.stderr, /--out must be matters/);
+      rmSync(r.dir, { recursive: true });
+    }
+  } finally {
+    rmSync(matter, { recursive: true, force: true });
+  }
 });
 
 test('CLI still runs when reached through a symlink', { skip: process.platform === 'win32' }, () => {

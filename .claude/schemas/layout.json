@@ -22,7 +22,6 @@
     { "pattern": "CITATION.cff" },
     { "pattern": "SECURITY.md" },
     { "pattern": "LICENSE" },
-    { "pattern": "package.json" },
     { "pattern": ".gitignore" },
     { "pattern": ".gitattributes" }
   ]
