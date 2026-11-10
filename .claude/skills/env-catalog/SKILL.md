@@ -29,6 +29,7 @@ Everything traces to an entry in `catalog/provisions.json`, each carrying a `sou
 - Every answer repeats the item's `verification` state. If `verify`/`unverified`, say so and name what a human must confirm.
 - The draft EIA Notification 2020 is not in force; cite only the 2006 Notification as operative.
 - This is tooling, not legal advice.
+- Installed as a plugin with no `catalog/` in the working directory, read the catalog at `${CLAUDE_PLUGIN_ROOT}/catalog/provisions.json`.
 
 ## Commands
 

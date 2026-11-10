@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Aranya installs as a Claude Code plugin: `.claude-plugin/plugin.json` and a marketplace file. It ships the skills, the catalog and the calculator, and no hooks, because a plugin-wide write guard would block every edit in a project with no layout. Four skills say where to find the catalog and the calculator when there is no workspace.
+
 ## 0.3.2 (2026-11-09)
 
 - The README says where Aranya comes from: the book *Evolution of Environmental Jurisprudence in India: The National Green Tribunal* (Cambridge University Press, 2025), and the aim of making REA/HEA compensation analysis free and open to anyone.

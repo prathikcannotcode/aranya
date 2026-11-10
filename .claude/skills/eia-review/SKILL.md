@@ -31,6 +31,7 @@ Review a supplied EIA report or Environmental Clearance against the EIA Notifica
 - Cites the 2006 Notification, never the 2020 draft.
 - Every finding cites the provision and its `verification` state; tooling, not legal advice.
 - A finding needs a `catalog_id` from `catalog/provisions.json`. If the provision is not in the catalog, raise a flag naming it and tell the user the catalog needs an entry; do not write a finding on it.
+- Installed as a plugin with no `catalog/` in the working directory, read the catalog at `${CLAUDE_PLUGIN_ROOT}/catalog/provisions.json`.
 
 ## Commands
 
