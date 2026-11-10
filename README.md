@@ -78,7 +78,7 @@ AI can make mistakes. Have a licensed attorney check every finding and citation 
 
 ## Quick start
 
-You need [Node.js 22+](https://nodejs.org) and [Claude Code](https://claude.com/claude-code). There is nothing to `npm install`.
+You need [Node.js 22+](https://nodejs.org) and [Claude Code](https://claude.com/claude-code). There is nothing to `npm install`. On Windows, install [Git for Windows](https://git-scm.com/download/win) too: the hooks run in Git Bash, and without it every write is blocked.
 
 1. **Clone and check the workspace.**
    ```bash
