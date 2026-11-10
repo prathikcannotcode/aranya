@@ -3,8 +3,8 @@
  * Schema validation. Node built-ins only, so a fresh clone needs no install.
  */
 
-import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
-import { join, extname, relative, resolve, dirname } from 'node:path';
+import { readFileSync, readdirSync, statSync, existsSync, realpathSync } from 'node:fs';
+import { join, extname, relative, resolve, dirname, basename } from 'node:path';
 
 const SCHEMA_DIR = '.claude/schemas';
 const SKIP_DIRS = new Set(['.git', 'node_modules']);
@@ -15,6 +15,13 @@ export function workspaceRoot(start = process.cwd()) {
     if (existsSync(join(dir, SCHEMA_DIR, 'layout.json'))) return dir;
     if (dirname(dir) === dir) return undefined;
   }
+}
+
+/** The path as the disk spells it, so another case or a symlink cannot dodge a layout rule. */
+export function realPath(path) {
+  if (existsSync(path)) return realpathSync.native(path);
+  const parent = dirname(path);
+  return parent === path ? path : join(realPath(parent), basename(path));
 }
 
 /** Problems with a SKILL.md frontmatter. A bare `: ` or ` #` in a value is not valid YAML. */

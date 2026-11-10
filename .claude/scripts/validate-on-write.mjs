@@ -7,7 +7,7 @@
  */
 
 import { resolve, relative } from 'node:path';
-import { checkFile, workspaceRoot } from './lib.mjs';
+import { checkFile, workspaceRoot, realPath } from './lib.mjs';
 
 let raw = '';
 process.stdin.setEncoding('utf8');
@@ -21,9 +21,9 @@ process.stdin.on('end', () => {
 
   const start = [event.cwd, process.cwd(), process.env.CLAUDE_PROJECT_DIR].find(dir => dir && workspaceRoot(dir));
   if (!start) process.exit(0);
-  const root = workspaceRoot(start);
+  const root = realPath(workspaceRoot(start));
 
-  const rel = relative(root, resolve(start, filePath)).replace(/\\/g, '/');
+  const rel = relative(root, realPath(resolve(start, filePath))).replace(/\\/g, '/');
   const errors = checkFile(rel, root);
   if (errors.length) {
     console.error(`Validation failed for ${rel}:\n  ${errors.join('\n  ')}`);

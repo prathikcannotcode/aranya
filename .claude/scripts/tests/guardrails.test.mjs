@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { mkdtempSync, mkdirSync, copyFileSync, writeFileSync, readFileSync, rmSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, copyFileSync, writeFileSync, readFileSync, rmSync, existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -49,7 +49,7 @@ test('layout matches data paths and rejects strays', () => {
 
 test('agents cannot write the guards that bind them', () => {
   const layout = loadLayout(repo);
-  for (const p of ['.claude/scripts/write-guard.mjs', '.claude/schemas/layout.json', '.claude/schemas/calc-result.schema.json', '.claude/settings.json', '.claude/settings.local.json']) {
+  for (const p of ['.claude/scripts/write-guard.mjs', '.claude/schemas/layout.json', '.claude/schemas/calc-result.schema.json', '.claude/settings.json', '.claude/settings.local.json', 'package.json']) { // package.json: `npm test` is pre-approved, so its scripts are a guard too
     assert.equal(matchRule(layout, p), undefined, p);
   }
   assert.ok(matchRule(layout, '.claude/skills/env-catalog/SKILL.md'));
@@ -80,6 +80,21 @@ test('write-guard stops an agent recording expert validation', () => {
   const r = run('write-guard.mjs', { cwd: dir, input: { tool_name: 'Write', tool_input: { file_path: 'matters/m1/calc/run-1.json', content: '{ "validation_status": "expert_validated" }' } } });
   assert.equal(r.status, 2);
   assert.match(r.stderr, /only a named human expert/);
+
+  const file = 'matters/m1/calc/run-1.json';
+  const guard = (tool_name, tool_input) => run('write-guard.mjs', { cwd: dir, input: { tool_name, tool_input: { file_path: file, ...tool_input } } }).status;
+  writeFileSync(join(dir, file), '{ "validation_status": "pending_expert_review", "label": "x" }');
+  assert.equal(guard('Edit', { old_string: 'pending_expert_review', new_string: 'expert_validated' }), 2, 'an Edit that swaps only the value');
+  assert.equal(guard('Write', { content: '{ "validation_status": "expert\\u005fvalidated" }' }), 2, 'a unicode escape');
+  assert.equal(guard('Edit', { old_string: '"x"', new_string: '"y"' }), 0, 'an ordinary edit still passes');
+  rmSync(dir, { recursive: true });
+});
+
+test('another spelling of a guarded path is still guarded', { skip: !existsSync(join(repo, 'PACKAGE.JSON')) && 'case-sensitive disk' }, () => {
+  const dir = workspace();
+  const guard = (file_path, content) => run('write-guard.mjs', { cwd: dir, input: { tool_name: 'Write', tool_input: { file_path, content } } }).status;
+  assert.equal(guard('catalog/Provisions.json', '{}'), 2);
+  assert.equal(guard('matters/m1/FLAGS.jsonl', ''), 2);
   rmSync(dir, { recursive: true });
 });
 

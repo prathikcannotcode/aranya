@@ -17,9 +17,9 @@
  */
 
 import { readFileSync, writeFileSync, mkdirSync, realpathSync } from 'node:fs';
-import { dirname } from 'node:path';
+import { dirname, resolve, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadSchema, validate } from './lib.mjs';
+import { loadSchema, validate, loadLayout, matchRule, realPath } from './lib.mjs';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 const DISCLAIMER =
@@ -165,9 +165,16 @@ if (isMain()) {
     console.error(summarise(result));
     const outIdx = process.argv.indexOf('--out');
     if (outIdx !== -1 && process.argv[outIdx + 1]) {
-      mkdirSync(dirname(process.argv[outIdx + 1]), { recursive: true });
-      writeFileSync(process.argv[outIdx + 1], JSON.stringify(result, null, 2) + '\n');
-      console.log(`Wrote ${process.argv[outIdx + 1]}`);
+      const out = process.argv[outIdx + 1];
+      // --out runs outside the write-guard, so it takes only a new calc file in this workspace.
+      const rel = relative(realPath(ROOT), realPath(resolve(out))).replace(/\\/g, '/');
+      if (matchRule(loadLayout(ROOT), rel)?.schema !== 'calc-result.schema.json') {
+        throw new Error(`--out must be matters/<id>/calc/<run>.json in this workspace, got ${out}`);
+      }
+      mkdirSync(dirname(out), { recursive: true });
+      try { writeFileSync(out, JSON.stringify(result, null, 2) + '\n', { flag: 'wx' }); }
+      catch (e) { throw e.code === 'EEXIST' ? new Error(`${out} already exists. A run is a record: pick a new run name.`) : e; }
+      console.log(`Wrote ${out}`);
     } else {
       console.log(JSON.stringify(result, null, 2));
     }

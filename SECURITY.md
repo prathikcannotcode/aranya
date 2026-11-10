@@ -14,7 +14,7 @@ Include what you found, how to reproduce it, and the impact.
 
 ## Known limits
 
-- Hooks guard Claude Code's Write, Edit and MultiEdit tools. A shell command run through the Bash tool is not intercepted, and that includes the calculator's `--out`; `npm run validate` still checks what it wrote. Keep Bash permissions narrow (`.claude/settings.json` allows only the validate, test and calculator commands by default).
+- Hooks guard Claude Code's Write, Edit and MultiEdit tools. A shell command run through the Bash tool is not intercepted. The calculator's `--out` checks itself: it writes only a new `matters/<id>/calc/<run>.json` and never overwrites one. Keep Bash permissions narrow (`.claude/settings.json` allows only the validate, test and calculator commands by default).
 - `onFailure: block` needs Claude Code 2.1.295 or newer. On older versions, a hook that cannot start at all does not block the write.
 - The hook command looks for the guard under `${CLAUDE_PROJECT_DIR}`, the folder a session started in, then relative to the working directory. A session that moved here from elsewhere and then changed into a subdirectory can't find it, so writes are blocked until it returns to the repo root.
 - On Windows without Git Bash, Claude Code runs hooks in PowerShell, which can't parse this command. The write-guard then blocks every write, and post-write validation does not run. Install Git for Windows.
