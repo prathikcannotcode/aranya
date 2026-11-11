@@ -171,6 +171,12 @@ test('a finding must point at a real catalog entry', () => {
   for (const p of ['The Act as a whole', 'Water (Prevention and Control of Pollution) Act, 1974', 'Hazardous Waste Rules 2016', "the Act's 2010 amendment"]) {
     assert.equal(onWater(p), '', p);
   }
+
+  // An instrument entry that quotes its own clauses vouches for those clauses only.
+  const cpcb = catalog.instruments.find(e => e.id === 'cpcb-ec-2019');
+  const onCpcb = provision => check({ ...realFinding(), catalog_id: cpcb.id, source_url: cpcb.source_url, verification: cpcb.verification, provision });
+  for (const p of ['clause 1.5.1', 'clauses 1.3.2 and 1.5.2', 'Chapter I, instance (f)', 'item (f)']) assert.equal(onCpcb(p), '', p);
+  for (const p of ['clause 9.9.9', 'para 2.7', 'clause 1.5.13']) assert.match(onCpcb(p), /holds only as a whole instrument/, p);
   rmSync(dir, { recursive: true });
 });
 
