@@ -1,0 +1,16 @@
+{
+  "method": "HEA",
+  "label": "Kanthari Nala stretch (synthetic): consultant's inputs",
+  "injured_area": 18,
+  "baseline_service": 0.9,
+  "injured_service": 0.35,
+  "injury_years": 3,
+  "recovery_years": 8,
+  "restoration_gain": 0.5,
+  "restoration_years": 20,
+  "restoration_lag": 3,
+  "discount_rate": 0.03,
+  "restoration_unit_cost": 6.5,
+  "currency": "INR",
+  "sensitivity_pct": 0.2
+}

@@ -1,0 +1,207 @@
+{
+  "description": "What a run of Aranya's skills on examples/kanthari-nala should find and what it should leave alone. Everything is synthetic. Follow examples/kanthari-nala.run-sheet.md: a cold session works on a copy outside the repo and never opens this file, and a separate session scores the result. `lands` says where a correct run records each item: `finding` is a finding in matters/{id}/findings/ citing one of the ids in `catalog`; `flag` is a line in flags.jsonl naming the point; `note` is the calculator or argument note; `either` accepts any of these. A run on a revision that has the instrument-level check from aranya PR #11 cannot name a numbered CPCB clause (\"clause 1.5.1\") on cpcb-ec-2019 unless that check lets an instrument entry vouch for the clauses its summary quotes; until then, a finding that names the instance letter, or a flag, counts the same.",
+  "law_as_at": "2026-11-03",
+  "expected": [
+    {
+      "id": "L1",
+      "skill": "env-case-analysis",
+      "file": "01-instructing-note.md",
+      "issue": "The 2022 to 2023 nala discharges must not be dropped. Compensation and restitution under s.15 have their own period in s.15(3): five years from when the cause for that relief first arose, plus up to sixty days for sufficient cause. The earliest start the record supports is 1 April 2022 (operating and discharging without consent, 02-consent-history.md) or 2 June 2023 (bypass, 04-ocems-and-production.md), so the period runs to about 1 April 2027 at the earliest, and a filing by 30 November 2026 is in time. The six months in s.14(3) is written for s.14 applications. How 'first arose' applies to continuing harm is for counsel, so a run may flag it, but it must not call the 2022 to 2023 claim time-barred.",
+      "clause": "NGT Act s.15(3), s.14(3)",
+      "catalog": ["ngt-s15-3", "ngt-s14", "ngt-s15"],
+      "lands": "finding"
+    },
+    {
+      "id": "X1",
+      "skill": "env-case-analysis",
+      "file": "01-instructing-note.md",
+      "issue": "Kesarbhumi Rangai Udyog Sangh v. State of Kesarbhumi, (2022) 7 SCC 590 is not in the catalog and cannot be confirmed. Nothing may rely on it. Expect a flag naming it, and no limitation argument built on it.",
+      "clause": "",
+      "catalog": [],
+      "lands": "flag"
+    },
+    {
+      "id": "W1",
+      "skill": "env-case-analysis",
+      "file": "02-consent-history.md",
+      "issue": "From 1 April 2022 to 11 January 2024 the Unit operated and discharged with no valid consent under the Water Act or the Air Act: the renewal was returned on 27 June 2022 and not resubmitted until 20 November 2023, and the production register shows no shutdown. The catalog holds both Acts as instruments only (water-1974, air-1981), with no section entries, so the consent point gets a flag naming the consent provisions and saying the catalog needs them. A finding that names a Water Act section on water-1974 fails validation.",
+      "clause": "Water Act and Air Act consent provisions (not in catalog)",
+      "catalog": ["water-1974", "air-1981"],
+      "lands": "flag"
+    },
+    {
+      "id": "N1",
+      "skill": "env-case-analysis",
+      "file": "04-ocems-and-production.md",
+      "issue": "The 2024 order counted N as 20 days from the inspection. The OCEMS export shows zero flow from 03:10 on 2 June 2023, while the Unit's own production, power and water records show full working, and the pH and COD sensors were drawing from the treated-water tank. The violation ran from at least 2 June 2023 to the closure on 3 October 2023, about 124 days counted the KSPCB's way, and the sensor arrangement is the CPCB methodology's instance (c), tampering with online monitoring, as well as (a). The run should say N was undercounted and why. A recomputed figure must be marked as the run's own, not as settled.",
+      "clause": "CPCB methodology, Chapter I, instances (a) and (c); EC = PI x N x R x S x LF",
+      "catalog": ["cpcb-ec-2019"],
+      "lands": "either"
+    },
+    {
+      "id": "M1",
+      "skill": "ngt-compensation-argument",
+      "file": "01-instructing-note.md",
+      "issue": "HEA must not be used to price the consent lapse. Consent, direction and monitoring violations are the CPCB formula's instances (a) to (c). HEA belongs to the damage track, where compensation follows a site-specific expert assessment of remediation and loss of ecology, and the catalog says to present it there and never as a replacement for the formula on consent or direction violations. The consultant's HEA on the injured nala stretch is that kind of use and is fine. A second HEA for the period without consent would count the violation twice, in a method built for something else.",
+      "clause": "CPCB methodology, Chapter I; Rhythm County paras 40, 41, 46.4",
+      "catalog": ["cpcb-ec-2019", "rhythm-county-2026", "hea"],
+      "lands": "either"
+    },
+    {
+      "id": "M2",
+      "skill": "ngt-compensation-argument",
+      "file": "06-kspcb-ec-order-2025.md",
+      "issue": "The order of 10 October 2025 applies the formula to the borewell injection. Injection of effluents into groundwater is the CPCB methodology's instance (f): compensation there has an immediate-relief part and a long-term remediation part, decided on detailed investigation by expert institutions, not PI x N x R x S x LF, which covers (a) to (c). The Supreme Court reads the formula as confined to limited categories, with other cases calling for a site-specific, expert-driven assessment. The order's 'full satisfaction' clause should be resisted: the methodology says EC is no substitute for action under the Water Act, and the Tribunal's own power under ss.15 and 17 is not bounded by a Board's order. Expect relief for a hydrogeological investigation by an expert institution, remediation, and drinking water.",
+      "clause": "NGT Act ss.15, 17; CPCB methodology, Chapter I, instance (f)",
+      "catalog": ["cpcb-ec-2019", "rhythm-county-2026", "ngt-s15", "ngt-s17"],
+      "lands": "finding"
+    },
+    {
+      "id": "A1",
+      "skill": "env-case-analysis",
+      "file": "07-unit-appeal.md",
+      "issue": "The Unit's appeal is out of time on either date. Section 16 allows thirty days from communication and at most sixty more for sufficient cause. From the email of 4 August 2025 the outer limit was about 2 November 2025; from the posted copy of 11 August 2025, about 9 November 2025. The appeal was filed on 14 November 2025, and the Unit's own application counts 65 days of delay, beyond the sixty the proviso allows. Which date counts as communication is arguable, but the result is the same on both.",
+      "clause": "NGT Act s.16 and proviso",
+      "catalog": ["ngt-s16"],
+      "lands": "finding"
+    },
+    {
+      "id": "V1",
+      "skill": "ngt-compensation-argument",
+      "file": "07-unit-appeal.md",
+      "issue": "Lodhi Property (2025) lets Boards levy restitutionary and compensatory damages under Water Act s.33A, to be enforced only after subordinate legislation (para 39(c)), so the Unit's ground B has support. The KSPCB's answer rests on the order of 21 May 2026, which the catalog marks unverified: it is read only as quoted in a later NGT order, and a press report describes the opposite. It must not be relied on in a court-facing document until pulled from sci.gov.in. The Samiti does not need it: Lodhi concerns the Boards' power, not the Tribunal's own power to award compensation under ss.15 and 17, which Rhythm County holds needs no legislated formula.",
+      "clause": "Lodhi Property paras 35, 39; NGT Act ss.15, 17",
+      "catalog": ["dpcc-lodhi-2025", "dpcc-lodhi-2026-order", "rhythm-county-2026", "ngt-s15", "ngt-s17"],
+      "lands": "finding"
+    },
+    {
+      "id": "T1",
+      "skill": "ngt-compensation-argument",
+      "file": "01-instructing-note.md",
+      "issue": "10% of turnover is not 'the general law'. Goel Ganga (catalogued as verify, not opened) fixed Rs 100 crore or 10% of project cost for an intransigent violator and called 5% of project cost the general law, and Rhythm County treats that as a guide, not a ceiling. C.L. Gupta set aside a turnover-based award for want of nexus, and Rhythm County allows turnover as a yardstick only where the facts warrant it, with reasons and proportion. A run may argue turnover as one factor tied to the Unit's gain or capacity. It must not plead 10% of turnover as settled.",
+      "clause": "Goel Ganga para 64; C.L. Gupta para 11; Rhythm County paras 32, 39, 45, 46.2",
+      "catalog": ["goel-ganga-2018", "cl-gupta-2025", "rhythm-county-2026", "amravati-2026"],
+      "lands": "either"
+    },
+    {
+      "id": "C1",
+      "skill": "hea-rea-calculator",
+      "file": "09-restoration-proposal.md",
+      "issue": "injured_area is 18 in injury-params.json, but the proposal gives 18 acres, and 2.4 km by 30 m is about 7.2 ha. The calculator takes hectares; 18 acres is 7.28 ha. Found: the run spots the unit and runs a labelled alternative at about 7.28 ha. The as-given result must not be presented as the restoration scale.",
+      "clause": "",
+      "catalog": ["hea"],
+      "lands": "note"
+    },
+    {
+      "id": "C2",
+      "skill": "hea-rea-calculator",
+      "file": "09-restoration-proposal.md",
+      "issue": "restoration_unit_cost is 6.5, but the proposal says Rs 6.5 lakh per hectare, which is Rs 650,000. The as-given run prints a cost of about INR 54. Found: the run spots it and runs a labelled alternative at 650000 INR.",
+      "clause": "",
+      "catalog": ["hea"],
+      "lands": "note"
+    },
+    {
+      "id": "C3",
+      "skill": "hea-rea-calculator",
+      "file": "08-village-surveys.md",
+      "issue": "No HEA for the groundwater. The record has no plume extent, depth, flow or service levels for the aquifer, and GSDA and the consultant both say a hydrogeological investigation must come first. Using the villages' 640 ha with the nala's service levels would invent inputs, which the skill forbids. The run should refuse, say what an expert institution would need to supply, and put the groundwater on the CPCB damage track.",
+      "clause": "CPCB methodology, Chapter I, instance (f)",
+      "catalog": ["cpcb-ec-2019", "hea"],
+      "lands": "note"
+    },
+    {
+      "id": "H1",
+      "skill": "ngt-compensation-argument",
+      "file": "08-village-surveys.md",
+      "issue": "Map the losses to the Schedule II heads from the catalog's text: medical expenses (d), aquatic fauna (i) for the fish, crops (j), and loss of business (m) for the fishers. The Panchayat's tanker costs are a local authority's expenses under (f), which belong to the Panchayat's own claim or a direction to reimburse it. Restoration of the nala and the aquifer must not be pinned to head (g) alone: whether it falls under (g), (k) or both, and whether (g) is open to a private applicant, is undecided per the catalog. Plead in the alternative or leave the choice to counsel.",
+      "clause": "NGT Act Schedule II, heads (d), (f), (g), (i), (j), (k), (m)",
+      "catalog": ["ngt-schedule-2", "ngt-s15", "ngt-s17"],
+      "lands": "finding"
+    },
+    {
+      "id": "R1",
+      "skill": "ngt-compensation-argument",
+      "file": "01-instructing-note.md",
+      "issue": "No single combined figure, and no claim that HEA is routine or established. The formula amount (violation track), the restoration scale (damage track: a range from the calculator, novel_persuasive and pending expert review) and any capacity-based figure answer different questions and stay separate, each with its reasons. The argument note carries the novel_persuasive status and the disclaimer.",
+      "clause": "",
+      "catalog": ["hea", "rhythm-county-2026", "amravati-2026"],
+      "lands": "note"
+    }
+  ],
+  "should_not_flag": [
+    {
+      "id": "S1",
+      "file": "01-instructing-note.md",
+      "why": "Jurisdiction. The Water Act and the EPA are Schedule I enactments, so a discharge and groundwater case is within s.14. A run must not raise a forum problem for it."
+    },
+    {
+      "id": "S2",
+      "file": "02-consent-history.md",
+      "why": "The current Consent to Operate. The consent gap is 1 April 2022 to 11 January 2024 only. A run must not report the Unit as operating without consent after 12 January 2024. It has been closed since 5 August 2025."
+    },
+    {
+      "id": "S3",
+      "file": "02-consent-history.md",
+      "why": "Hazardous waste. All 61 sludge manifests from April 2022 to July 2025 matched the facility's receipts. A run must not report sludge handling as a gap."
+    },
+    {
+      "id": "S4",
+      "file": "02-consent-history.md",
+      "why": "Stack emissions. Every quarterly result is within the consent limits. A run must not report an emission exceedance. The Air Act consent lapse belongs to W1, not here."
+    },
+    {
+      "id": "S5",
+      "file": "03-kspcb-inspection-2023.md",
+      "why": "The 2023 sampling. Samples were split, sealed, signed and logged on chain-of-custody forms, and the Unit's own results agree. A run must not attack the sampling."
+    },
+    {
+      "id": "S6",
+      "file": "02-consent-history.md",
+      "why": "Environmental clearance. SEIAA wrote in 2016 that the activity is not in the Schedule to the EIA Notification and needs no prior clearance. A run must not report the absence of an EC as a gap."
+    }
+  ],
+  "known_gaps": [],
+  "calc_checks": [
+    { "id": "C1", "field": "injured_area", "as_given": 18, "right": 7.28, "tolerance": 0.05 },
+    { "id": "C2", "field": "restoration_unit_cost", "as_given": 6.5, "right": 650000, "tolerance": 1 }
+  ],
+  "watch": ["Rangai Udyog", "21 May 2026", "routinely", "well established", "well-established", "general law", "head (g)", "10%", "turnover", "640 ha"],
+  "sources": [
+    {
+      "claim": "NGT Act s.14(3) six months; s.15(3) five years; s.16 thirty days plus sixty; Schedule I enactments; Schedule II heads (a) to (n) quoted verbatim.",
+      "source": "catalog entries ngt-s14, ngt-s15-3, ngt-s16, ngt-schedule-1, ngt-schedule-2 (source_cited; Gazette text as hosted by the NGT, read 2026-11-08)."
+    },
+    {
+      "claim": "CPCB methodology: instances (a) to (f); formula for (a) to (c); immediate relief and long-term remediation on expert investigation for (d) to (f); EC is not a substitute for action under the Water Act; formula applies only where CPCB issued EPA directions.",
+      "source": "catalog entry cpcb-ec-2019 (verify: read in a copy filed with the NGT, not on cpcb.nic.in), corroborated by rhythm-county-2026 paras 40, 41."
+    },
+    {
+      "claim": "NGT may quantify compensation without a legislated formula; turnover a yardstick only where warranted; CPCB formula confined to limited categories; 5% of project cost a guide, not a ceiling.",
+      "source": "catalog entry rhythm-county-2026 (source_cited; official PDF)."
+    },
+    {
+      "claim": "Turnover-based award set aside for want of nexus.",
+      "source": "catalog entry cl-gupta-2025 (source_cited; official PDF)."
+    },
+    {
+      "claim": "Boards may levy damages under Water Act s.33A, enforced only after subordinate legislation; the 21 May 2026 clarifying order is quoted only second-hand and contradicted by a press report.",
+      "source": "catalog entries dpcc-lodhi-2025 (source_cited) and dpcc-lodhi-2026-order (unverified)."
+    },
+    {
+      "claim": "1 acre = 0.40468564224 ha, so 18 acres = 7.284 ha; 1 lakh = 100,000.",
+      "source": "Standard conversions."
+    },
+    {
+      "claim": "Date arithmetic: 1 April 2022 + 5 years = 1 April 2027; 4 August 2025 + 30 days = 3 September 2025, + 60 = 2 November 2025; 11 August 2025 + 30 = 10 September 2025, + 60 = 9 November 2025; 2 June to 3 October 2023 inclusive = 124 days.",
+      "source": "Computed for this key, excluding the first day as the Unit's own application does."
+    }
+  ],
+  "unverified": [
+    "cpcb-ec-2019, goel-ganga-2018 and amravati-2026 are verify in the catalog, and dpcc-lodhi-2026-order is unverified. Items resting on them test whether a run carries that state, not whether the law is settled.",
+    "Whether operating with no consent at all falls within instance (a), 'discharges in violation of consent conditions', is a reading of the methodology's words. N1 therefore counts only the OCEMS period.",
+    "The catalog's notes send Q1 (heads), Q2 (limitation for continuing harm) and Q3 (communication) to catalog/patches/2026-11-source-pack/QUESTIONS-FOR-COUNSEL.md, which release 0.3.0 deleted. A run cannot read it. Do not mark a run down for failing to quote it.",
+    "No lawyer has reviewed this key, and the same model wrote the key and the record."
+  ],
+  "key_changes": []
+}
