@@ -35,6 +35,29 @@ REA/HEA has no documented NGT or Indian precedent. Any calculator or argument ou
 
 Read each catalog entry's `note` as well as its `verification` state: several list points still to confirm, such as case pinpoints. Confirm against primary sources (Gazette, indiacode.nic.in, greentribunal.gov.in, the SCC reports) before relying on them.
 
+## Recording a matter
+
+- `matter.json` copies the catalog's `law_as_at`, and records the `model` that ran and the `aranya_version` from `package.json`, so a reader can trace the run.
+- `forum` is where the main relief lies. Name any other forum in `other_forums`, such as a High Court writ for a Wild Life Act point the NGT cannot hear, and explain the split in `description`.
+- A finding names its main flag in `flag_id`. Any other flag lists the finding in its `linked_findings`.
+- A flag on a judgment uses `target.kind: "case"`, with the case's `catalog_id` if it has one and the paragraph in `locator`.
+- Name each risk in a matter and what decides it. Give no view on the outcome.
+
+## When something is missing or blocked
+
+A run should end with a partial result and a list of what it skipped. It should not stall, and it should not guess.
+
+- **Nobody can answer a question** (headless run, side session, no reply): take the answer from the record and carry on. Never write `false`, `0` or a guess for something you don't know. Leave an optional field out and name it in the output.
+- **A schema has no value for what you found**: use the closest allowed value, say in a text field that it is a stand-in, and report the gap. Do not edit the schema.
+- **A hook blocks a write**: do not route around it through the shell or another tool. Put the content at the nearest path the layout allows, usually under `matters/{id}/`, and report the block.
+- **A skill has no mode for the step**: use its legal-basis section as the checklist and cite only catalog entries.
+- **The only evidence is an absence**: if a document or step is merely missing from the record you were given, write "not found in the record supplied" and rate it medium at most. Go higher when a document itself shows the gap, such as a Form 1 answer that the surveys contradict.
+- **The catalog holds only the instrument**: a section, para, rule or schedule without its own entry gets a flag, not a finding. The validator rejects a finding that names such a part on an instrument-level `catalog_id`. A note may discuss the point if it names the flag and marks the law as unconfirmed. A court-facing document may not rely on it.
+- **The record contradicts the calculator inputs you were given**: run the inputs as given first. Then run labelled alternatives, each from its own file in `matters/{id}/inputs/`, and name the record document behind each change. `calc/` holds results only.
+- **A filing date comes before expert validation**: plead the restoration scale as a figure to be established by expert evidence. Never mark a result validated to meet a date.
+- **Your instructions conflict with this file**: this file wins. State each refusal in the output.
+- **Another installed skill assumes Word output or a house style**: follow its workflow inside the Markdown note.
+
 ## Disclaimer
 
 AI can make mistakes. Aranya is tooling, not legal advice. Have a licensed attorney check everything before you rely on it, and a qualified ecological expert check any damage figure.

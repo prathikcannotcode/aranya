@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Flagged section",
-  "description": "A user- or agent-raised flag against a specific section: a statutory provision, an EC/EIA condition, a judgment paragraph, or a report clause.",
+  "description": "A user- or agent-raised flag against a specific section: a statutory provision (kind provision), a judgment or its paragraph (kind case), or an EC/EIA condition or report clause (kind document).",
   "type": "object",
   "required": ["flag_id", "matter_id", "target", "concern", "raised_by", "status", "created"],
   "properties": {
@@ -11,7 +11,7 @@
       "type": "object",
       "required": ["kind"],
       "properties": {
-        "kind": { "type": "string", "enum": ["provision", "document"] },
+        "kind": { "type": "string", "enum": ["provision", "case", "document"] },
         "instrument": { "type": "string" },
         "section": { "type": "string" },
         "catalog_id": { "type": "string" },
