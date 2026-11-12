@@ -19,6 +19,13 @@ Changes carried over from Vigil's 11 November guardrail review, and answers to t
 - A flag's `target.kind` accepts `case`.
 - `matters/*/inputs/*.json` is validated against `injury-params.schema.json`.
 
+### Evaluation
+- Second blind fixture, `examples/kanthari-nala`: a synthetic pollution matter with an answer key, a run sheet and a first scored run in `examples/kanthari-nala.run-1`. 14 of 14 planted issues found, 6 of 6 should-not-flag items clean, and a post-run probe showed the write hooks live. One model wrote the key and ran the matter, and no lawyer has reviewed either; `SCORE.md` says how far to trust it.
+- `examples/score-check.mjs` validates and tallies any run folder against a key. The scorer still judges each item.
+
+### Catalog
+- `catalog/patches/2026-11-source-pack/QUESTIONS-FOR-COUNSEL.md` is back. Release 0.3.0 deleted it, but seven catalog notes still send readers there for Q1 to Q3.
+
 ## 0.3.2 (2026-11-09)
 
 - The README says where Aranya comes from: the book *Evolution of Environmental Jurisprudence in India: The National Green Tribunal* (Cambridge University Press, 2025), and the aim of making REA/HEA compensation analysis free and open to anyone.
