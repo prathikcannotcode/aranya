@@ -59,9 +59,14 @@ HEA equivalency analysis [novel_persuasive, pending_expert_review]
 
 The figures are illustrative and synthetic. The point is the shape: a debit, a restoration scale, a cost, a range, and a status that stays `pending_expert_review` until a named expert validates the inputs.
 
-## Tested on a synthetic matter
+## Tested on synthetic matters
 
-[Morvali Creek](examples/morvali-creek) is a synthetic NGT matter with 14 planted issues and an answer list committed before the run. The skills found all 14, left all 6 should-not-flag items alone and invented no citation; the [score](examples/morvali-creek.run-1/SCORE.md) has the detail. Since that run, the catalog has added the provisions it had to reach for, including NGT Act s.15(3) and s.16, the EIA General Condition, para 8(vi) and Appendix IV.
+Two synthetic NGT matters, each with planted issues and an answer key committed before the run:
+
+- [Morvali Creek](examples/morvali-creek), an EIA and clearance matter. The skills found all 14 planted issues, left all 6 should-not-flag items alone and invented no citation. Four of the 14 rested on law the catalog then lacked, which the run supplied from memory; the catalog has since added NGT Act s.15(3) and s.16, the EIA General Condition, para 8(vi) and Appendix IV. That session started outside the repo, so Aranya's own hooks and skill routing never ran. [Score](examples/morvali-creek.run-1/SCORE.md).
+- [Kanthari Nala](examples/kanthari-nala), an effluent and groundwater matter that turns on the CPCB compensation method. A blind run in a fresh session on an exported copy, offline, scored by a separate session. It found all 14 planted issues, left all 6 should-not-flag items alone, sent every uncatalogued provision to a flag and relied on no unverified authority. All five skills were loaded, and a probe after the run showed the write hooks blocking. [Score](examples/kanthari-nala.run-1/SCORE.md).
+
+Read the scores before quoting them. The same model wrote both keys and ran both matters, the keys were built from the catalog's own text, and no lawyer has reviewed either. To run one yourself, follow the [run sheet](examples/kanthari-nala.run-sheet.md) and tally the result with `examples/score-check.mjs`.
 
 AI can make mistakes. Have a licensed attorney check every finding and citation before you rely on it.
 
@@ -160,13 +165,13 @@ Skills are Markdown that tell Claude what the law provides and how to apply it. 
 
 | Guard | Enforced by | What it stops |
 |---|---|---|
-| Workspace layout | `write-guard.mjs` reading [`layout.json`](.claude/schemas/layout.json) | Writes to any path the layout does not list, path traversal out of the repo, and edits to the hooks, schemas and settings themselves |
+| Workspace layout | `write-guard.mjs` reading [`layout.json`](.claude/schemas/layout.json) | Writes to any path the layout does not list, path traversal out of the repo, and edits to the hooks, schemas and settings themselves. A hook event it can't read is blocked too. |
 | Append-only flags | `write-guard.mjs` | Edits to a matter's `flags.jsonl`; a change is a new line |
 | Schema validation | `validate-on-write.mjs`, `npm run validate` | A finding with no clause, source or verification state; a result with no `methodology_status` |
 | Calculator inputs | `hea-rea.mjs` reading `injury-params.schema.json` | A discount rate of 3 instead of 0.03, a missing input, a mistyped field, injured service above baseline |
 | Novel methodology | `calc-result.schema.json` | `methodology_status` can only be `novel_persuasive`; never `established`. This covers results, not Markdown drafts. |
 | Expert gate | `write-guard.mjs`, `npm run validate` | An agent recording `expert_validated`, or anyone doing so without `validated_by` and `validated_at`. Nothing confirms the name is genuine, so review the diff. |
-| Catalog-only citations | `write-guard.mjs`, `npm run validate` | A finding whose `catalog_id` is not in the catalog or whose source or state differs from it, and any agent edit to the catalog. It can't check that a catalog entry is itself correct, or what a Markdown draft cites. |
+| Catalog-only citations | `write-guard.mjs`, `npm run validate` | A finding whose `catalog_id` is not in the catalog or whose source or state differs from it, a finding that names a section the catalog holds only at Act level, and any agent edit to the catalog. It can't check that a catalog entry is itself correct, or what a Markdown draft cites. |
 | Tests | `npm test`, GitHub Actions | Regressions in all of the above. 30 tests, Node's built-in runner. |
 
 ## Methodology
@@ -194,6 +199,7 @@ Each entry records when it was last checked; the newest were checked in November
 | `.claude/scripts/` | The write-guard and validate hooks, `lib.mjs`, and `hea-rea.mjs` |
 | `catalog/provisions.json` | The source-cited legal catalog |
 | `matters/{id}/` | Per-matter workspace: `matter.json`, `flags.jsonl`, `findings/`, `calc/`. Gitignored except the synthetic sample. |
+| `examples/` | Two synthetic matters with answer keys, run sheets and scored runs, and `score-check.mjs` |
 | `docs/` | [METHODOLOGY.md](docs/METHODOLOGY.md) and a [handoff brief](docs/handoff-rea-hea-note.md) for a short paper |
 
 ## FAQ

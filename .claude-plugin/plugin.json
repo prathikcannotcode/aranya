@@ -1,7 +1,7 @@
 {
   "name": "aranya",
   "displayName": "Aranya",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Indian environmental-law skills for Claude Code: NGT case analysis, EIA review and restoration-scaled damage (REA/HEA) arguments, each citing a source-checked catalog. Skills, catalog and calculator; the write guards need an Aranya workspace.",
   "author": {
     "name": "Aranya contributors",
