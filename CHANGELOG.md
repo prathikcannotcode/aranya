@@ -1,5 +1,24 @@
 # Changelog
 
+## Unreleased
+
+Changes carried over from Vigil's 11 November guardrail review, and answers to the calls the Morvali Creek run had to make on its own.
+
+### Guardrails
+- The write-guard blocks a hook event it cannot read: invalid JSON, no `tool_name` or `tool_input`, or a file tool with no path. It allowed all of these before.
+- NotebookEdit goes through the write-guard. It could write anywhere before, the read-only catalog included.
+- The post-write validator reports a hook event it cannot read instead of skipping it.
+- A finding that names a section, para, rule or schedule on an instrument-level `catalog_id` fails validation. Water Act "s.999" on `water-1974` passed before. The Morvali Creek run reported this as bug 3. An instrument entry still vouches for the parts its own summary quotes, such as the CPCB methodology's clauses.
+- Earlier, from #8: `package.json` left the writable layout, both hooks resolve a path as the disk spells it, the expert gate parses the file as it would be saved, and the calculator's `--out` writes only a new calc file.
+
+### Operating rules
+- `AGENTS.md` says what to do when nobody can answer, a schema has no value, a hook blocks a write, a skill has no mode for the step, or the only evidence is an absence. It also settles the Morvali Creek run's open calls: an uncatalogued section gets a flag, alternative calculator inputs go in `matters/{id}/inputs/`, a filing date never forces expert validation, and `AGENTS.md` wins over conflicting instructions.
+
+### Schemas
+- `matter.json` gains `other_forums`, `model` and `aranya_version`. `forum` is where the main relief lies.
+- A flag's `target.kind` accepts `case`.
+- `matters/*/inputs/*.json` is validated against `injury-params.schema.json`.
+
 ## 0.3.2 (2026-11-09)
 
 - The README says where Aranya comes from: the book *Evolution of Environmental Jurisprudence in India: The National Green Tribunal* (Cambridge University Press, 2025), and the aim of making REA/HEA compensation analysis free and open to anyone.

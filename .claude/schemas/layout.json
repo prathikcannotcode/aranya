@@ -7,6 +7,7 @@
     { "pattern": "matters/*/flags.jsonl", "schema": "flag.schema.json", "append_only": true, "description": "Append-only log of flagged sections (provisions, EC conditions, report clauses)" },
     { "pattern": "matters/*/findings/*.json", "schema": "finding.schema.json", "description": "Analysis findings, each citing a clause" },
     { "pattern": "matters/*/calc/*.json", "schema": "calc-result.schema.json", "description": "REA/HEA calculator runs" },
+    { "pattern": "matters/*/inputs/*.json", "schema": "injury-params.schema.json", "description": "Alternative calculator inputs, one file per labelled run" },
     { "pattern": "matters/*/**", "description": "Chronology, analysis notes and argument drafts" },
     { "pattern": "matters/.gitkeep", "description": "Keeps the empty directory in git" },
     { "pattern": "catalog/**", "description": "Catalog source extracts and notes" },
