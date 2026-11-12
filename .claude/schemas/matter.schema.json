@@ -6,10 +6,17 @@
   "properties": {
     "matter_id": { "type": "string", "minLength": 1 },
     "title": { "type": "string", "minLength": 1 },
-    "forum": { "type": "string", "enum": ["ngt", "high_court_writ", "supreme_court", "criminal", "appellate_authority", "scheduled_act_authority", "other", "undetermined"] },
+    "forum": { "type": "string", "description": "Where the main relief lies", "enum": ["ngt", "high_court_writ", "supreme_court", "criminal", "appellate_authority", "scheduled_act_authority", "other", "undetermined"] },
+    "other_forums": {
+      "type": "array",
+      "description": "Other forums the matter reaches, such as a writ for a point outside NGT Schedule I",
+      "items": { "type": "string", "enum": ["ngt", "high_court_writ", "supreme_court", "criminal", "appellate_authority", "scheduled_act_authority", "other"] }
+    },
     "description": { "type": "string" },
     "created": { "type": "string", "format": "date-time" },
-    "law_as_at": { "type": "string", "format": "date" }
+    "law_as_at": { "type": "string", "format": "date" },
+    "model": { "type": "string", "minLength": 1, "description": "The model that ran the analysis" },
+    "aranya_version": { "type": "string", "minLength": 1, "description": "The version in package.json when the matter was opened" }
   },
   "additionalProperties": true
 }

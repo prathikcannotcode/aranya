@@ -173,12 +173,30 @@ export function checkFile(relPath, root = process.cwd(), layout = loadLayout(roo
   });
 }
 
+// A section, para, rule or schedule followed by its number: "s.15(3)", "para 7", "Schedule I", "clause 1.5.1".
+// Up to three digits, so a year ("Rules 2016") is not read as a rule number. The number is captured.
+// shortcut: a part named without a number, such as "General Condition", is not caught, and a number the entry's summary
+// uses for something else (the CPCB scale factor 1.5) passes as a clause; widen the list or tighten the match if runs show it.
+const NAMES_A_PART = /\b(?:ss?\.|(?:sections?|paras?|paragraphs?|rules?|regulations?|clauses?|schedules?|appendix|appendices|articles?|arts?|items?)\.?)\s*(\d{1,3}(?:\.\d{1,3})*(?!\d)|[IVXL]+\b|\([a-z0-9]+\))/i;
+// True when `text` names `ref` as a whole reference: "1.5.1" in "(1.5.1)", not inside "11.5.1" or "1.5.12".
+const quotes = (text = '', ref) => {
+  for (let i = text.indexOf(ref); i !== -1; i = text.indexOf(ref, i + 1)) {
+    if (!/[\w.]/.test(text[i - 1] ?? ' ') && !/^(\w|\.\d)/.test(text.slice(i + ref.length, i + ref.length + 2))) return true;
+  }
+  return false;
+};
+
 // A finding must point at a catalog entry and repeat its source and state, so neither can be made up.
 function findingSourceErrors(finding, at, root) {
   const catalog = JSON.parse(readFileSync(join(root, 'catalog/provisions.json'), 'utf8'));
   const entry = Object.values(catalog).filter(Array.isArray).flat().find(e => e.id === finding.catalog_id);
   if (!entry) return [`${at}.catalog_id: "${finding.catalog_id}" is not in catalog/provisions.json`];
   const errors = [];
+  // An instrument entry vouches for the instrument as a whole and for the parts its own summary quotes, nothing more.
+  const part = catalog.instruments?.includes(entry) && finding.provision.match(NAMES_A_PART);
+  if (part && !quotes(entry.summary, part[1])) {
+    errors.push(`${at}.provision: "${finding.provision}" names part of ${entry.id}, which the catalog holds only as a whole instrument. Cite that part's own catalog entry, or raise a flag and ask a human to add one.`);
+  }
   if (finding.source_url !== entry.source_url) errors.push(`${at}.source_url: must match the catalog entry (${entry.source_url})`);
   if (finding.verification !== entry.verification) errors.push(`${at}.verification: must match the catalog entry (${entry.verification})`);
   return errors;

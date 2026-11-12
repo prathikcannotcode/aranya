@@ -1,0 +1,19 @@
+{
+  "matter_id": "kanthari-nala",
+  "title": "Kantharwadi Jal Hakk Samiti v. Sarvani Textile Processors Pvt. Ltd. and others: Kanthari Nala and groundwater pollution (synthetic)",
+  "forum": "ngt",
+  "description": "SYNTHETIC matter built for testing Aranya; every party, place, date and document is invented. The Samiti (380 households in Kantharwadi, Ratnapada and Bhilkhed; 42 fishing members) plans an original application before the NGT Central Zone Bench by 30 November 2026 for compensation, restoration of Kanthari Nala and the groundwater, and continued closure of the Unit. It has also applied to intervene (I.A. 7 of 2026) in the Unit's Appeal No. 118 of 2025 (CZ) against the KSPCB closure direction of 2 August 2025 and compensation order of 10 October 2025, listed on 2 December 2026 on delay and interim relief. Both proceedings sit before the NGT, so no other forum is recorded. The harm arises under the Water Act 1974, a Schedule I enactment. The record shows no air-quality harm, so the Air Act is not pleaded. Analysis note: matters/kanthari-nala/note.md.",
+  "created": "2026-11-11T19:48:30Z",
+  "law_as_at": "2026-11-03",
+  "model": "claude-opus-5-5",
+  "aranya_version": "0.3.2",
+  "synthetic": true,
+  "client": "Kantharwadi Jal Hakk Samiti (registered society)",
+  "respondents": ["Sarvani Textile Processors Pvt. Ltd.", "Kesarbhumi State Pollution Control Board", "State of Kesarbhumi"],
+  "key_dates": {
+    "instructing_note": "2026-11-10",
+    "oa_target_filing": "2026-11-30",
+    "unit_appeal_hearing": "2026-12-02"
+  },
+  "record": "record/01-instructing-note.md to record/09-restoration-proposal.md and record/injury-params.json"
+}

@@ -1,0 +1,22 @@
+{
+  "L1": { "verdict": "found", "findings": ["F-0002", "F-0003"], "flags": ["FL-0004", "FL-0005"], "notes": ["note.md"] },
+  "X1": { "verdict": "found", "findings": [], "flags": ["FL-0005"], "notes": ["note.md"] },
+  "W1": { "verdict": "found", "findings": ["F-0001"], "flags": ["FL-0001"], "notes": ["note.md"] },
+  "N1": { "verdict": "found", "findings": ["F-0008"], "flags": ["FL-0009"], "notes": ["note.md"] },
+  "M1": { "verdict": "found", "findings": ["F-0009"], "flags": [], "notes": ["note.md"] },
+  "M2": { "verdict": "found", "findings": ["F-0007", "F-0006"], "flags": ["FL-0008", "FL-0010"], "notes": ["note.md"] },
+  "A1": { "verdict": "found", "findings": ["F-0004"], "flags": ["FL-0006"], "notes": ["note.md"] },
+  "V1": { "verdict": "found", "findings": ["F-0005", "F-0006"], "flags": ["FL-0007"], "notes": ["note.md"] },
+  "T1": { "verdict": "found", "findings": ["F-0010"], "flags": ["FL-0011"], "notes": ["note.md"] },
+  "C1": { "verdict": "found", "findings": ["F-0009"], "flags": ["FL-0014"], "notes": ["note.md", "calc/run-2-units-corrected.json"] },
+  "C2": { "verdict": "found", "findings": ["F-0009"], "flags": ["FL-0014"], "notes": ["note.md", "calc/run-2-units-corrected.json"] },
+  "C3": { "verdict": "found", "findings": ["F-0009"], "flags": ["FL-0016"], "notes": ["note.md"] },
+  "H1": { "verdict": "found", "findings": ["F-0011"], "flags": ["FL-0012"], "notes": ["note.md"] },
+  "R1": { "verdict": "found", "findings": ["F-0015", "F-0009"], "flags": [], "notes": ["note.md"] },
+  "S1": { "verdict": "clean", "evidence": "F-0001 affirms jurisdiction under Schedule I item (1)." },
+  "S2": { "verdict": "clean", "evidence": "Every consent point ends at 3 October 2023 or 11 January 2024; nothing says the Unit lacked consent after 12 January 2024." },
+  "S3": { "verdict": "clean", "evidence": "No finding, flag or note mentions sludge or manifests." },
+  "S4": { "verdict": "clean", "evidence": "F-0001 and note section 4 cite the stack results as within limits and make no air claim." },
+  "S5": { "verdict": "clean", "evidence": "The 2023 results are used as found; nothing questions the sampling." },
+  "S6": { "verdict": "clean", "evidence": "Note section 12 records SEIAA's letter as the reason eia-review was not run; no gap is claimed." }
+}

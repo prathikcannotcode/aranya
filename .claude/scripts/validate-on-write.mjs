@@ -15,7 +15,10 @@ process.stdin.on('data', chunk => { raw += chunk; });
 process.stdin.on('end', () => {
   let event;
   try { event = JSON.parse(raw); }
-  catch { process.exit(0); }
+  catch {
+    console.error('Validation skipped: could not read the hook event. Run npm run validate.');
+    process.exit(2);
+  }
   const filePath = event.tool_input?.file_path;
   if (!filePath) process.exit(0);
 

@@ -1,0 +1,16 @@
+{
+  "method": "HEA",
+  "label": "Kanthari Nala stretch (synthetic): consultant's inputs with units corrected. injured_area 18 acres = 7.28 ha and restoration_unit_cost Rs 6.5 lakh/ha = INR 650000/ha, both per record/09-restoration-proposal.md ('Total injured area: 18 acres'; 'Rs 6.5 lakh per hectare'). Every other input unchanged and still pending expert review.",
+  "injured_area": 7.28,
+  "baseline_service": 0.9,
+  "injured_service": 0.35,
+  "injury_years": 3,
+  "recovery_years": 8,
+  "restoration_gain": 0.5,
+  "restoration_years": 20,
+  "restoration_lag": 3,
+  "discount_rate": 0.03,
+  "restoration_unit_cost": 650000,
+  "currency": "INR",
+  "sensitivity_pct": 0.2
+}
