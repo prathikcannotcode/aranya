@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0005",
+  "summary": "The Unit's Ground B has catalogued support. In Lodhi Property the Supreme Court held that Boards may impose restitutionary and compensatory damages under Water Act s.33A (para 39(b)) but that the power is to be enforced only after rules or regulations set out the method (para 39(c)); the Unit pleads that Kesarbhumi has framed none. The KSPCB's answer rests entirely on the order of 21 May 2026, which it has not annexed and which the catalog holds as unverified: read only as quoted in a later NGT order, while a press report of the same day describes the opposite. That order settles nothing until someone reads it at source. Lodhi concerns the Boards' power, not the Tribunal's own power under ss.15 and 17.",
+  "instrument": "Delhi Pollution Control Committee v. Lodhi Property Co. Ltd., 2025 INSC 923",
+  "provision": "paras 35 and 39(b), 39(c)",
+  "severity": "high",
+  "recommendation": "Do not cite the 21 May 2026 order on 2 December unless a named human has pulled it from sci.gov.in and confirmed para 2 (FL-0007); ask that the KSPCB file a copy. Keep the Samiti's case off this ground: Ground B attacks only the order of 10 October 2025, not the closure, and the Samiti's application asks the Tribunal to fix compensation itself under ss.15 and 17 (F-0006), which the Board-power question does not reach.",
+  "source_url": "https://api.sci.gov.in/supremecourt/2012/40604/40604_2012_6_1501_62921_Judgement_04-Aug-2025.pdf",
+  "verification": "source_cited",
+  "flag_id": "FL-0007",
+  "catalog_id": "dpcc-lodhi-2025",
+  "record": ["record/07-unit-appeal.md"]
+}

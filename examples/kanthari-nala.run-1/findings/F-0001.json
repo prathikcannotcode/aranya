@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0001",
+  "summary": "The NGT has jurisdiction over the Samiti's water claims. The 2023 bypass into Kanthari Nala and the 2025 injection of ETP effluent into a borewell are harms arising out of the implementation of the Water Act 1974, item (1) of Schedule I. The instructing advocate's assumption holds for these claims. The record shows no air harm (stack results within limits in every quarter 2022 to 2025; the KSPCB has raised no air point), so the Air Act is not pleaded even though the consents were granted under both Acts.",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "Schedule I, item (1) Water Act 1974; read with s.14(1) and s.15(1)",
+  "severity": "high",
+  "recommendation": "Plead jurisdiction on the Water Act 1974 as a Schedule I enactment. Name the Water Act sections relied on (ss.24, 25, 26 and 33A) only once the catalog holds entries for them (FL-0001 to FL-0003). Add no Air Act claim the record does not support.",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2025",
+  "verification": "source_cited",
+  "flag_id": "FL-0002",
+  "catalog_id": "ngt-schedule-1",
+  "record": ["record/02-consent-history.md", "record/03-kspcb-inspection-2023.md", "record/05-joint-inspection-2025.md"]
+}
