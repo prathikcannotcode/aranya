@@ -20,7 +20,7 @@ Everything traces to an entry in `catalog/provisions.json`, each carrying a `sou
 ## Capabilities
 
 1. **Lookup** — return a provision/doctrine/case by `id`, instrument, or section, with its summary, citation, `source_url` and `verification` state.
-2. **Resolve a flag** — given a flag `target` of `kind: "provision"`, return the catalog node it points at.
+2. **Resolve a flag** — given a flag `target` of `kind: "provision"` or `kind: "case"`, return the catalog node it points at, or say the catalog has none.
 3. **Jurisdiction check** — a matter founds an NGT case only if a substantial environmental question arises out of a Schedule I enactment (`ngt-schedule-1`). The Wild Life (Protection) Act 1972 is not in Schedule I.
 4. **Currency** — surface commencement and amendment flags (e.g. the 2023 amendments to the Forest and Biodiversity Acts; the EIA draft 2020 is not law).
 

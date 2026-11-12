@@ -1,0 +1,12 @@
+{
+  "finding_id": "F-0010",
+  "summary": "No catalogued authority makes 10% of turnover the general law. Goel Ganga, as quoted in Rhythm County, called 5% of project cost the general law and, for an intransigent violator, fixed Rs 100 crore or 10% of project cost, whichever is more: project cost, not turnover, and the catalog has not opened it. Rhythm County treats turnover as a relevant yardstick only where the facts warrant, not a blunt instrument, requires compensation to be rational, proportionate and reasoned (paras 32, 39, 46.2), and reads the 5% as a general guide, not a ceiling (para 45). C.L. Gupta set aside a Rs 50 crore award fixed on turnover for want of nexus. Ten per cent of the Rs 412 crore turnover for 2024-25 is Rs 41.2 crore; the injection overlaps only February and March of that year.",
+  "instrument": "M/s Rhythm County v. Satish Sanjay Hegde, 2026 INSC 102",
+  "provision": "paras 32, 39, 45 and 46.2",
+  "severity": "high",
+  "recommendation": "Do not plead 10% of turnover, and do not attribute that rule to Goel Ganga (FL-0011). If counsel wants the Unit's size before the Tribunal, plead turnover as one factor for deterrence and capacity to pay, tied to the violations by a reasoned nexus, and keep it apart from the restoration figures.",
+  "source_url": "https://api.sci.gov.in/supremecourt/2022/30735/30735_2022_8_1501_67798_Judgement_30-Jan-2026.pdf",
+  "verification": "source_cited",
+  "flag_id": "FL-0011",
+  "catalog_id": "rhythm-county-2026"
+}

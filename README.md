@@ -167,7 +167,7 @@ Skills are Markdown that tell Claude what the law provides and how to apply it. 
 | Novel methodology | `calc-result.schema.json` | `methodology_status` can only be `novel_persuasive`; never `established`. This covers results, not Markdown drafts. |
 | Expert gate | `write-guard.mjs`, `npm run validate` | An agent recording `expert_validated`, or anyone doing so without `validated_by` and `validated_at`. Nothing confirms the name is genuine, so review the diff. |
 | Catalog-only citations | `write-guard.mjs`, `npm run validate` | A finding whose `catalog_id` is not in the catalog or whose source or state differs from it, and any agent edit to the catalog. It can't check that a catalog entry is itself correct, or what a Markdown draft cites. |
-| Tests | `npm test`, GitHub Actions | Regressions in all of the above. 28 tests, Node's built-in runner. |
+| Tests | `npm test`, GitHub Actions | Regressions in all of the above. 30 tests, Node's built-in runner. |
 
 ## Methodology
 

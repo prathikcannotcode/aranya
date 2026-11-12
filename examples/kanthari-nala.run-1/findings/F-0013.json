@@ -1,0 +1,12 @@
+{
+  "finding_id": "F-0013",
+  "summary": "Section 20 obliges the Tribunal to apply the precautionary and polluter pays principles. The plume's direction, depth and extent are unknown and no monitoring wells exist (GSDA, July 2025 and March 2026); the March 2026 re-sampling shows the contamination persisting and two more Bhilkhed wells failing; the Unit has paid nothing towards drinking water under the direction of 2 August 2025 and has not paid the order of 10 October 2025. These facts are the answer to Ground A (closure disproportionate because the borewell is sealed and 640 workers are employed).",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "s.20",
+  "severity": "high",
+  "recommendation": "Plead continued closure until a hydrogeological investigation has mapped the plume and a remediation plan is approved and funded, on s.20. In the appeal, answer Ground A with the GSDA results, the unpaid drinking-water cost and the repeated violation. Proportionality is for the Tribunal to weigh: name the 640 workers as the Unit's strongest fact and give no view on how it will be weighed.",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2025",
+  "verification": "source_cited",
+  "catalog_id": "ngt-s20",
+  "record": ["record/05-joint-inspection-2025.md", "record/07-unit-appeal.md", "record/08-village-surveys.md"]
+}

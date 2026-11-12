@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0002",
+  "summary": "The proposal to drop the 2022 and 2023 discharges rests on the six-month period in s.14(3). A claim for compensation, relief or restitution of the environment under s.15 has five years from the date on which the cause for it first arose (s.15(3)), plus up to sixty days for sufficient cause. The earliest cause on the record is operation without consent from 1 April 2022; five years from then runs to about 1 April 2027, after the 30 November 2026 filing target. The bypass (from 2 June 2023) and the injection (from 1 February 2025) are later still. On the catalogued text, nothing needs to be dropped from the s.15 claim.",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "s.15(3)",
+  "severity": "critical",
+  "recommendation": "Keep the 2022 and 2023 discharges in the application and frame the compensation and restoration claims under s.15, pleading s.15(3). Which period governs each prayer, and how 'first arose' applies to continuing contamination, is for counsel (FL-0004). Do not plead Kesarbhumi Rangai Udyog Sangh: it is not in the catalog and nobody has read it (FL-0005).",
+  "source_url": "https://www.greentribunal.gov.in/sites/default/files/act_rules/National_Green_Tribunal_Act,_2010.pdf",
+  "verification": "source_cited",
+  "flag_id": "FL-0004",
+  "catalog_id": "ngt-s15-3",
+  "record": ["record/02-consent-history.md", "record/04-ocems-and-production.md", "record/06-kspcb-ec-order-2025.md"]
+}

@@ -20,10 +20,10 @@ Open and orient a matter. Decide the forum before anything else, map the applica
 
 ## Capabilities
 
-1. **Create the matter** — write `matters/{id}/matter.json` (parties, `forum`, dates, `law_as_at`).
+1. **Create the matter** — write `matters/{id}/matter.json` (parties, `forum`, any `other_forums`, dates, the catalog's `law_as_at`, `model`, `aranya_version`).
 2. **Jurisdiction first** — ask `env-catalog` whether the harm arises under a Schedule I enactment. If not (e.g. pure Wild Life Act 1972 harm), say the NGT may lack jurisdiction and name the alternative forum.
 3. **Issues and reliefs** — list the issues; map available reliefs (relief/compensation under `ngt-s15`, restitution of the environment, interim directions).
-4. **Findings** — write each point to `matters/{id}/findings/*.json`, citing a provision and carrying its verification state.
+4. **Findings** — write each point to `matters/{id}/findings/*.json`, citing a provision and carrying its verification state. A section with no catalog entry of its own gets a flag, even when its Act has one.
 5. **Flagging** — append a user- or agent-raised flag to `matters/{id}/flags.jsonl` (append-only); link resolved flags to findings.
 
 ## Guardrails

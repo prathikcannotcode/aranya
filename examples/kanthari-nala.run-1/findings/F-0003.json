@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0003",
+  "summary": "Relief framed as a s.14 dispute faces the six-month period in s.14(3), extendable by up to sixty days. Counted from the joint inspection of 18 July 2025, six months ended on 18 January 2026 and the outer limit on about 19 March 2026, both before the filing target. The fact that decides whether a later cause arises is the continuing contamination: GSDA's March 2026 re-sampling shows the same wells failing and two more Bhilkhed wells above the colour limit. The proposition that time does not run while the Board's investigation is pending comes only from a case outside the catalog and cannot be relied on.",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "s.14(3)",
+  "severity": "high",
+  "recommendation": "Rest the compensation, restoration and closure prayers on s.15 and its five-year period wherever they can stand there. For any prayer that needs s.14, plead the continuing contamination with the March 2026 GSDA results and leave the continuing-wrong question to counsel (FL-0004). Do not build in the pending-investigation theory unless a named human has read the judgment and the catalog carries it (FL-0005).",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2025",
+  "verification": "source_cited",
+  "flag_id": "FL-0004",
+  "catalog_id": "ngt-s14",
+  "record": ["record/05-joint-inspection-2025.md", "record/08-village-surveys.md"]
+}

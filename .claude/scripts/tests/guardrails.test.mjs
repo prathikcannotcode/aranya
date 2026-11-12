@@ -12,7 +12,7 @@ const repo = join(scripts, '..', '..');
 
 function run(script, { cwd = repo, input, args = [] } = {}) {
   return spawnSync(process.execPath, [join(scripts, script), ...args], {
-    cwd, input: input && JSON.stringify(input), encoding: 'utf8',
+    cwd, input: typeof input === 'string' ? input : input && JSON.stringify(input), encoding: 'utf8',
   });
 }
 
@@ -44,6 +44,7 @@ test('layout matches data paths and rejects strays', () => {
   assert.equal(matchRule(layout, 'matters/m1/findings/F-0001.json').schema, 'finding.schema.json');
   assert.equal(matchRule(layout, 'matters/m1/flags.jsonl').append_only, true);
   assert.equal(matchRule(layout, 'catalog/provisions.json').readonly, true);
+  assert.equal(matchRule(layout, 'matters/m1/inputs/run-2.json').schema, 'injury-params.schema.json');
   assert.equal(matchRule(layout, 'src/app.js'), undefined);
 });
 
@@ -121,6 +122,22 @@ test('hooks find the workspace from a subdirectory and block with exit 2', () =>
   rmSync(dir, { recursive: true });
 });
 
+test('write-guard fails closed on events it cannot read', () => {
+  const dir = workspace();
+  const guard = input => run('write-guard.mjs', { cwd: dir, input }).status;
+  for (const input of ['', 'not json', 'null', '{}', { tool_name: 'Write' }, { tool_name: 'Write', tool_input: {} }, { tool_name: 'Edit', tool_input: { file_path: '' } }]) {
+    assert.equal(guard(input), 2, JSON.stringify(input));
+  }
+  assert.equal(guard({ tool_name: 'TodoWrite', tool_input: { todos: [] } }), 0, 'a tool that writes no file, caught by a loose matcher');
+  assert.equal(guard({ tool_name: 'NotebookEdit', tool_input: { notebook_path: 'src/x.ipynb', new_source: 'x' } }), 2);
+  assert.equal(guard({ tool_name: 'NotebookEdit', tool_input: { notebook_path: 'catalog/provisions.json', new_source: '{}' } }), 2);
+  assert.equal(guard({ tool_name: 'NotebookEdit', tool_input: { notebook_path: 'matters/m1/flags.jsonl', new_source: '{"c":3}' } }), 2);
+  assert.equal(guard({ tool_name: 'NotebookEdit', tool_input: { notebook_path: 'docs/x.ipynb', new_source: 'x' } }), 0);
+  const { hooks } = JSON.parse(readFileSync(join(repo, '.claude/settings.json'), 'utf8'));
+  assert.match(hooks.PreToolUse[0].matcher, /\bNotebookEdit\b/);
+  rmSync(dir, { recursive: true });
+});
+
 test('write-guard fails closed when the layout is broken', () => {
   const dir = workspace();
   writeFileSync(join(dir, '.claude/schemas/layout.json'), '{ not json');
@@ -144,6 +161,22 @@ test('a finding must point at a real catalog entry', () => {
   assert.match(check(noEntry), /missing required "catalog_id"/);
   assert.match(check({ ...realFinding(), source_url: 'https://indiankanoon.org/doc/1/' }), /source_url: must match/);
   assert.match(check({ ...realFinding(), verification: 'unverified' }), /verification: must match/);
+
+  const catalog = JSON.parse(readFileSync(join(repo, 'catalog/provisions.json'), 'utf8'));
+  const water = catalog.instruments.find(e => e.id === 'water-1974');
+  const onWater = provision => check({ ...realFinding(), catalog_id: water.id, source_url: water.source_url, verification: water.verification, provision });
+  for (const p of ['s.999', 'Section 33A', 'para 7', 'Schedule I', 'Appendix IV', 'Rule 5(1)', 'clause (k)']) {
+    assert.match(onWater(p), /holds only as a whole instrument/, p);
+  }
+  for (const p of ['The Act as a whole', 'Water (Prevention and Control of Pollution) Act, 1974', 'Hazardous Waste Rules 2016', "the Act's 2010 amendment"]) {
+    assert.equal(onWater(p), '', p);
+  }
+
+  // An instrument entry that quotes its own clauses vouches for those clauses only.
+  const cpcb = catalog.instruments.find(e => e.id === 'cpcb-ec-2019');
+  const onCpcb = provision => check({ ...realFinding(), catalog_id: cpcb.id, source_url: cpcb.source_url, verification: cpcb.verification, provision });
+  for (const p of ['clause 1.5.1', 'clauses 1.3.2 and 1.5.2', 'Chapter I, instance (f)', 'item (f)']) assert.equal(onCpcb(p), '', p);
+  for (const p of ['clause 9.9.9', 'para 2.7', 'clause 1.5.13']) assert.match(onCpcb(p), /holds only as a whole instrument/, p);
   rmSync(dir, { recursive: true });
 });
 
@@ -166,6 +199,7 @@ test('validate-on-write exits 2 so the agent sees errors', () => {
   const r = run('validate-on-write.mjs', { cwd: dir, input: { tool_input: { file_path: 'matters/m1/findings/F-1.json' } } });
   assert.equal(r.status, 2);
   assert.match(r.stderr, /not in catalog/);
+  assert.equal(run('validate-on-write.mjs', { cwd: dir, input: 'not json' }).status, 2, 'an unreadable event must not pass silently');
   rmSync(dir, { recursive: true });
 });
 

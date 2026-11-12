@@ -1,0 +1,12 @@
+{
+  "finding_id": "F-0016",
+  "summary": "The record shows the regulator's failures alongside the Unit's. The KSPCB took no action for some 18 months while the Unit ran without consent after its renewal application was returned on 27 June 2022; zero-flow alerts from 2 June 2023 were 'not escalated owing to a server migration'; fish-kill reports of 19 July and 28 August 2023 went unanswered until the inspection of 14 September 2023; and no hydrogeological investigation has been commissioned since GSDA called for one in July 2025. Under the public trust doctrine the State holds natural resources, rivers among them, as trustee for the public. Whether the doctrine as catalogued reaches groundwater is argument.",
+  "instrument": "M.C. Mehta v. Kamal Nath, (1997) 1 SCC 388",
+  "provision": "public trust doctrine",
+  "severity": "medium",
+  "recommendation": "Seek directions against the KSPCB and the State: commission the hydrogeological investigation and monitoring wells within a fixed time at the Unit's cost, enforce the drinking-water term of the direction of 2 August 2025, and audit how OCEMS alerts are handled. These are directions, not a compensation claim against the Board: the catalog holds nothing on a Board's liability to pay. Confirm the Kamal Nath pinpoints against the SCC report.",
+  "source_url": "https://indiankanoon.org/doc/1239689/",
+  "verification": "source_cited",
+  "catalog_id": "public-trust",
+  "record": ["record/02-consent-history.md", "record/04-ocems-and-production.md", "record/05-joint-inspection-2025.md", "record/08-village-surveys.md"]
+}

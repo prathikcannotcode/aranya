@@ -1,0 +1,12 @@
+{
+  "finding_id": "F-0012",
+  "summary": "Section 15 provides the three reliefs the client wants: relief and compensation to victims of pollution arising under a Schedule I enactment (clause (a)), restitution of property damaged (clause (b)) and restitution of the environment for such area as the Tribunal thinks fit (clause (c)); s.17 makes the person responsible liable under the Schedule II heads. The record quantifies some losses and not others: tanker water Rs 18.6 lakh to 31 October 2026; treatment Rs 3.1 lakh in 2025 by the Samiti's own count from receipts; crop yield losses of 40 to 60% on 85 acres (panchnama of 14 February 2026, no money value); catch per boat per day down from 14.2 kg in 2021 to 4.3 kg in 2025 (no price and no boat-days).",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "s.15(1)(a) to (c), read with s.17",
+  "severity": "high",
+  "recommendation": "Plead each victim head with its document, and state the crop and catch losses as figures to be established: the record gives no prices, so no money figure is offered. The health claim rests on a rise in dermatitis cases that the Medical Officer's letter says coincides with the change in well water and should be tested; ask for a health study instead of pleading causation as proved.",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2025",
+  "verification": "source_cited",
+  "catalog_id": "ngt-s15",
+  "record": ["record/08-village-surveys.md"]
+}

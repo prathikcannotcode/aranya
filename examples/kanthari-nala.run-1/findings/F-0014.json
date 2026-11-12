@@ -1,0 +1,12 @@
+{
+  "finding_id": "F-0014",
+  "summary": "Bichhri holds an enterprise carrying on a hazardous activity absolutely liable and makes the polluter pay for remediation of the affected area. The Unit discharged effluent with total chromium above its consent limit (2.6 mg/L against 2.0 in September 2023) and pumped ETP sump effluent into a 55 m borewell on 154 logged days in 2025; nine village wells now exceed the IS 10500 acceptable limit for total chromium, the highest at 0.31 mg/L, 600 m down-gradient.",
+  "instrument": "Indian Council for Enviro-Legal Action v. Union of India, (1996) 3 SCC 212",
+  "provision": "absolute liability; polluter pays for remediation of the affected area",
+  "severity": "medium",
+  "recommendation": "Cite Bichhri for the Unit's liability to pay for remediating the aquifer, with paragraph pinpoints confirmed against the SCC report first, as the catalog requires. Whether a dyeing unit's effluent makes its operation a hazardous activity for absolute liability is an argument, not a given: plead polluter pays under s.20 (F-0013) as the primary basis and absolute liability in support.",
+  "source_url": "https://indiankanoon.org/doc/1818014/",
+  "verification": "source_cited",
+  "catalog_id": "icela-1996",
+  "record": ["record/03-kspcb-inspection-2023.md", "record/05-joint-inspection-2025.md"]
+}
