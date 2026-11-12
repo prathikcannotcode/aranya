@@ -1,8 +1,8 @@
 # Changelog
 
-## Unreleased
+## 0.4.0 (2026-11-12)
 
-Changes carried over from Vigil's 11 November guardrail review, and answers to the calls the Morvali Creek run had to make on its own.
+Guardrail fixes carried over from Vigil's 11 November review, answers to the calls the Morvali Creek run had to make on its own, a second blind fixture with its first score, and plugin packaging.
 
 ### Guardrails
 - The write-guard blocks a hook event it cannot read: invalid JSON, no `tool_name` or `tool_input`, or a file tool with no path. It allowed all of these before.
