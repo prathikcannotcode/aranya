@@ -24,7 +24,7 @@
       "id": "W1",
       "skill": "env-case-analysis",
       "file": "02-consent-history.md",
-      "issue": "From 1 April 2022 to 11 January 2024 the Unit operated and discharged with no valid consent under the Water Act or the Air Act: the renewal was returned on 27 June 2022 and not resubmitted until 20 November 2023, and the production register shows no shutdown. The catalog holds both Acts as instruments only (water-1974, air-1981), with no section entries, so the consent point gets a flag naming the consent provisions and saying the catalog needs them. A finding that names a Water Act section on water-1974 fails validation.",
+      "issue": "From 1 April 2022 to 11 January 2024 the Unit held no valid consent under the Water Act or the Air Act, and it operated and discharged without one until the closure of 3 October 2023: the renewal was returned on 27 June 2022 and not resubmitted until 20 November 2023, and the production register shows no shutdown before the closure. The catalog holds both Acts as instruments only (water-1974, air-1981), with no section entries, so the consent point gets a flag naming the consent provisions and saying the catalog needs them. A finding that names a Water Act section on water-1974 fails validation.",
       "clause": "Water Act and Air Act consent provisions (not in catalog)",
       "catalog": ["water-1974", "air-1981"],
       "lands": "flag"
@@ -161,7 +161,16 @@
       "why": "Environmental clearance. SEIAA wrote in 2016 that the activity is not in the Schedule to the EIA Notification and needs no prior clearance. A run must not report the absence of an EC as a gap."
     }
   ],
-  "known_gaps": [],
+  "known_gaps": [
+    { "id": "K1", "file": "09-restoration-proposal.md", "issue": "restoration_lag 3 has restoration delivering service from June 2026, but no works had started by the October 2026 survey, so the record supports no lag below 4 years. A defect in the consultant's inputs that the key missed.", "found_in": "Run 1: FL-0015" },
+    { "id": "K2", "file": "08-village-surveys.md", "issue": "Catch per boat per day fell from 14.2 kg in 2021 to 11.8 kg in 2022, while the Unit ran without consent, so the injury may have begun before June 2023.", "found_in": "Run 1: FL-0015" },
+    { "id": "K3", "file": "07-unit-appeal.md", "issue": "The second proviso to s.18(2) bars a person who has preferred a s.16 appeal from applying under s.18(2). Confirm that intervening in the Unit's appeal is not preferring one before the Samiti files its own application. Uncatalogued, so a flag.", "found_in": "Run 1: FL-0013" },
+    { "id": "K4", "file": "06-kspcb-ec-order-2025.md", "issue": "The order counts 168 days from the drilling invoice; the logbook records 154 transfer days. Either count may be contested.", "found_in": "Run 1: note.md section 10" },
+    { "id": "K5", "file": "07-unit-appeal.md", "issue": "s.20 and the unmapped, spreading plume support continued closure until a remediation plan is approved and funded, and answer the Unit's Ground A.", "found_in": "Run 1: F-0013" },
+    { "id": "K6", "file": "04-ocems-and-production.md", "issue": "The KSPCB's own failures (zero-flow alerts not escalated, fish-kill reports of July and August 2023 unanswered, no hydrogeological investigation commissioned) support directions against the Board.", "found_in": "Run 1: F-0016" },
+    { "id": "K7", "file": "05-joint-inspection-2025.md", "issue": "Water Act s.24, disposal of polluting matter into a stream or well, fits both the bypass and the injection. Uncatalogued, so a flag.", "found_in": "Run 1: FL-0002" },
+    { "id": "K8", "file": "08-village-surveys.md", "issue": "Crop and catch losses have no money values on the record, and the health claim rests on the Medical Officer's untested letter, so those heads are figures to be established.", "found_in": "Run 1: F-0012" }
+  ],
   "calc_checks": [
     { "id": "C1", "field": "injured_area", "as_given": 18, "right": 7.28, "tolerance": 0.05 },
     { "id": "C2", "field": "restoration_unit_cost", "as_given": 6.5, "right": 650000, "tolerance": 1 }
@@ -203,5 +212,7 @@
     "The catalog's notes send Q1 (heads), Q2 (limitation for continuing harm) and Q3 (communication) to catalog/patches/2026-11-source-pack/QUESTIONS-FOR-COUNSEL.md, which release 0.3.0 deleted. A run cannot read it. Do not mark a run down for failing to quote it.",
     "No lawyer has reviewed this key, and the same model wrote the key and the record."
   ],
-  "key_changes": []
+  "key_changes": [
+    "12 November 2026, after run 1 (examples/kanthari-nala.run-1, scored against the key at 5d847d5). W1 said the Unit operated without consent to 11 January 2024; it was closed from 3 October 2023, which the run pointed out. W1 now separates the consent gap from the operating period. known_gaps records eight real points the run found (K1 to K8); K1 is a defect in the consultant's inputs. The record is unchanged, and the run 1 score stands against the original key."
+  ]
 }

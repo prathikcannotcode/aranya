@@ -10,23 +10,24 @@ Export committed revisions, so uncommitted skill text can't help the run. `<comm
 
 ```bash
 BLIND="$HOME/aranya-blind-kanthari"
-mkdir -p "$BLIND/aranya" "$BLIND/record"
+mkdir -p "$BLIND/aranya/record"
 git archive <commit> | tar -x -C "$BLIND/aranya"
-git archive <fixture-commit> examples/kanthari-nala | tar -x --strip-components=2 -C "$BLIND/record"
+git archive <fixture-commit> examples/kanthari-nala | tar -x --strip-components=2 -C "$BLIND/aranya/record"
 find "$BLIND/aranya/examples" -mindepth 1 -maxdepth 1 ! -name sample-injury.json -exec rm -rf {} +
 ```
 
+The record sits inside the workspace at `record/`, so the run reads it without a prompt for an outside folder. `record/` is not in the layout, so the run can read it but not write there.
+
 Then start a new Claude Code session with its working directory set to `$BLIND/aranya`, with no other session's context, notes or transcripts.
 
-1. Check that the session lists Aranya's five skills (`env-catalog`, `env-case-analysis`, `eia-review`, `hea-rea-calculator`, `ngt-compensation-argument`). If it lists another project's skills, it started in the wrong folder: stop and start again.
-2. Add the record with `/add-dir` and the path to `$BLIND/record`.
-3. Send this, and nothing else about the matter:
+1. Send this, and nothing else about the matter:
 
-   > A new matter's file is in the record folder you just added. Read `01-instructing-note.md` and act on it, using this workspace's skills and rules. Open the matter as `matters/kanthari-nala`. Work offline: do not use the web or open any GitHub page.
+   > First, list the skills you can see in this session. Then: a new matter's file is in `record/`. Read `record/01-instructing-note.md` and act on it, using this workspace's skills and rules. Open the matter as `matters/kanthari-nala`. Work offline: do not use the web or open any GitHub page. When you have finished, run `npm run validate -- --strict` and report the result.
 
-4. Answer questions only from the record. If the run asks something the record can't answer, say so.
-5. When it stops, run `npm run validate -- --strict` in `$BLIND/aranya`.
-6. Hand over `$BLIND/aranya/matters/kanthari-nala/` and the transcript. Do not score.
+2. Check that the list names Aranya's five skills (`env-catalog`, `env-case-analysis`, `eia-review`, `hea-rea-calculator`, `ngt-compensation-argument`). If it lists another project's skills instead, the session started in the wrong folder: stop and start again.
+3. Answer questions only from the record. If the run asks something the record can't answer, say so.
+4. When it stops, ask the same session to try two writes with the Write tool: `matters/kanthari-nala/hook-probe.json` holding `{"validation_status": "expert_validated"}`, and `record/hook-probe.md`. Both should be refused. A successful run may never hit a hook, so this is the only proof the hooks were live.
+5. Hand over `$BLIND/aranya/matters/kanthari-nala/` and the transcript. Do not score.
 
 ## Scoring session: separate, reads the key
 
@@ -54,7 +55,7 @@ Run the script again with that file as a third argument for the tallies, then wr
 - **Each `should_not_flag` item.** Violated if a finding, flag or note treats it as a gap. A neutral mention is clean.
 - **Other findings.** A finding that matches a `known_gaps` item is a real gap. Check the rest against the record and call each a real gap the key missed or a false positive.
 - **Citations.** List every authority the notes rely on that the catalog doesn't hold. Each should be flagged, not relied on.
-- **Hooks.** Search the transcript for "Write blocked" and "Validation failed". Record whether the hooks fired at least once. If they never did, say the run doesn't show them working.
+- **Hooks.** Record the two probe results from step 4. Then search the transcript for "Write blocked" and "Validation failed" during the run itself; a match inside a file the run read is not a hook firing.
 
 Report found, partial and missed out of the `expected` count, landing errors, should-not-flag violations out of its count, and the other tallies. Commit `SCORE.md`, `score-map.json` and the run's matter folder under `examples/kanthari-nala.run-<n>/`.
 
@@ -62,4 +63,4 @@ Tuning skills or the catalog on a scored run ends this fixture's blindness. Say 
 
 ## Key changes
 
-None yet.
+- **12 November 2026.** Changed after the first scored run (`examples/kanthari-nala.run-1`, scored against the key at `5d847d5`). W1 said the Unit operated without consent to 11 January 2024; it was closed from 3 October 2023, which the run pointed out. `known_gaps` records eight real points the run found, including a defect in the consultant's restoration lag (K1). The record is unchanged, and the run 1 score stands against the original key. The procedure now puts the record inside the workspace and adds the hook probe, as run 1 did.

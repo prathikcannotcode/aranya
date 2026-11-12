@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0009",
+  "summary": "HEA can size the restoration of the Kanthari Nala stretch. It cannot price a period of operation without consent, and no NGT or Indian court is documented as using it. Run as given, the consultant's inputs read 18 acres as 18 hectares and Rs 6.5 lakh as INR 6.5, so the as-given result (8.38 ha; 'INR 54') is wrong in both units (calc/run-1-as-given.json). With the units corrected from the consultant's own proposal (7.28 ha; INR 6,50,000 a hectare), the calculator gives 3.39 ha of compensatory restoration at Rs 22.0 lakh, with a sensitivity range of 2.71 to 4.24 ha and Rs 17.6 to 27.5 lakh (calc/run-2-units-corrected.json). Restoration gain and the service-loss fraction move the result most. Both runs are novel_persuasive and pending expert review, and neither costs the primary clean-up of the injured stretch itself.",
+  "instrument": "Habitat Equivalency Analysis (HEA)",
+  "provision": "Equivalency method, methodology_status novel_persuasive; statutory hook NGT Act s.15(1)(c) and s.17",
+  "severity": "high",
+  "recommendation": "Use HEA only for the nala stretch, as the expert assessment on the damage track, presented as persuasive comparative material from US natural resource damage assessment with its range, never as a method the Tribunal routinely applies. Do not use it to price April 2022 to January 2024: that is a consent violation, and HEA measures habitat injury. Have the consultant confirm the unit correction and answer the input questions in FL-0015, then have an ecologist validate, and plead the restoration scale as a figure to be established by expert evidence. No groundwater HEA was run: the record holds none of the inputs for an aquifer (FL-0016).",
+  "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7007898/",
+  "verification": "source_cited",
+  "flag_id": "FL-0014",
+  "catalog_id": "hea",
+  "record": ["record/09-restoration-proposal.md", "record/injury-params.json"]
+}

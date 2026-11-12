@@ -1,0 +1,13 @@
+{
+  "finding_id": "F-0011",
+  "summary": "Schedule II does not settle which head carries a restoration claim by a private applicant. Head (g) is framed as expenses incurred by the Government, including compensation for environmental degradation and restoration of the quality of environment; head (k) covers claims including cost of restoration on account of harm to the environment, including pollution of soil, water, land and eco-systems. The catalog records as undecided whether head (g) is open to a private applicant and which head a restoration figure belongs under. The victims' claims fit other heads on their words: medical expenses (d); the Gram Panchayat's tanker cost of Rs 18.6 lakh as a local authority's relief expense (f); aquatic fauna (i); crops (j); and the fishers' loss of business (m).",
+  "instrument": "National Green Tribunal Act, 2010",
+  "provision": "Schedule II, heads (d), (f), (g), (i), (j), (k) and (m)",
+  "severity": "high",
+  "recommendation": "Do not plead restoration under head (g) alone. Plead heads (k) and (g) in the alternative and leave the choice to counsel (FL-0012). Plead each victim head separately with its own document. The Gram Panchayat paid for the tankers, so ask for reimbursement to it, or consider joining it as a party.",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2025",
+  "verification": "source_cited",
+  "flag_id": "FL-0012",
+  "catalog_id": "ngt-schedule-2",
+  "record": ["record/08-village-surveys.md"]
+}

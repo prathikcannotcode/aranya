@@ -1,0 +1,11 @@
+{
+  "finding_id": "F-0006",
+  "summary": "The Tribunal can fix compensation itself. Rhythm County holds that NGT Act ss.15, 17 and 20 let the NGT quantify environmental compensation without a legislated formula (paras 19 to 25). The CPCB methodology is facilitative and indicative: its formula is confined to limited categories of violation, and other cases call for 'a detailed, site-specific and expert-driven assessment with emphasis on remediation and restitution' (paras 40, 41, 46.4). The NGT may still use the CPCB framework and expert committees if it applies its own mind (paras 42 to 44).",
+  "instrument": "M/s Rhythm County v. Satish Sanjay Hegde, 2026 INSC 102",
+  "provision": "paras 19 to 25, 40 to 44 and 46.4",
+  "severity": "high",
+  "recommendation": "Frame the application around the Tribunal's own power: the CPCB formula for the consent, bypass and monitoring violations as an indicative floor, and an expert, site-specific assessment for the nala and the aquifer. This keeps the Samiti's claim independent of the Board-power dispute in the Unit's appeal. Confirm the paragraph numbers and the quoted words against the official PDF before filing.",
+  "source_url": "https://api.sci.gov.in/supremecourt/2022/30735/30735_2022_8_1501_67798_Judgement_30-Jan-2026.pdf",
+  "verification": "source_cited",
+  "catalog_id": "rhythm-county-2026"
+}
