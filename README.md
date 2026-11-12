@@ -98,6 +98,18 @@ You need [Node.js 22+](https://nodejs.org) and [Claude Code](https://claude.com/
 5. **Start a matter.** Say *"Analyse this matter: untreated effluent degraded a mangrove stretch; the unit holds an EC."* Aranya checks the forum, applies the statutes, and records findings and flags under `matters/`.
 6. **Quantify.** Give the injury and restoration parameters and run `/hea-rea-calculator`; it returns the restoration scale with its range.
 
+### Or install the skills as a plugin
+
+```bash
+claude plugin marketplace add prathikcannotcode/aranya
+```
+
+```bash
+claude plugin install aranya@prathikcannotcode-aranya
+```
+
+The plugin carries the five skills (namespaced, as in `/aranya:env-catalog`), the catalog and the calculator, and they work in any project. It carries no hooks. Outside an Aranya workspace nothing enforces the write guard, schema validation or append-only flags, and the calculator's result is saved by the agent, so clone the repo for work that will reach a court.
+
 ## Skills
 
 Every skill is a slash command. You can also describe the task in plain English and Claude picks the right one.

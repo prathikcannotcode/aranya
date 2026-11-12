@@ -1,0 +1,14 @@
+{
+  "name": "prathikcannotcode-aranya",
+  "owner": {
+    "name": "Aranya contributors",
+    "url": "https://github.com/prathikcannotcode/aranya"
+  },
+  "plugins": [
+    {
+      "name": "aranya",
+      "source": "./",
+      "description": "Indian environmental-law skills for Claude Code"
+    }
+  ]
+}

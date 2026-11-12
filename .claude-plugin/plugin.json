@@ -1,0 +1,15 @@
+{
+  "name": "aranya",
+  "displayName": "Aranya",
+  "version": "0.3.2",
+  "description": "Indian environmental-law skills for Claude Code: NGT case analysis, EIA review and restoration-scaled damage (REA/HEA) arguments, each citing a source-checked catalog. Skills, catalog and calculator; the write guards need an Aranya workspace.",
+  "author": {
+    "name": "Aranya contributors",
+    "url": "https://github.com/prathikcannotcode/aranya"
+  },
+  "homepage": "https://github.com/prathikcannotcode/aranya#readme",
+  "repository": "https://github.com/prathikcannotcode/aranya",
+  "license": "Apache-2.0",
+  "keywords": ["environmental-law", "india", "ngt", "eia", "rea", "hea"],
+  "skills": "./.claude/skills/"
+}

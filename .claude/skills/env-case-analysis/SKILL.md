@@ -31,6 +31,7 @@ Open and orient a matter. Decide the forum before anything else, map the applica
 - Decide forum/jurisdiction before drafting any relief.
 - Every finding cites a provision and repeats its `verification` state; nothing unverified reaches a court-facing output.
 - A finding needs a `catalog_id` from `catalog/provisions.json`. If the provision is not in the catalog, raise a flag naming it and tell the user the catalog needs an entry; do not write a finding on it.
+- Installed as a plugin with no `catalog/` in the working directory, read the catalog at `${CLAUDE_PLUGIN_ROOT}/catalog/provisions.json`.
 - No merits prediction; this is tooling, not legal advice.
 
 ## Commands
